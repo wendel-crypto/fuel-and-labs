@@ -168,7 +168,7 @@ footer{{border-top:1px solid var(--line);padding:36px 0 56px;color:var(--mute);f
 <div class="thumbs">{thumbs}</div></div>
 </div></section>
 <section><div class="wrap two"><div><p class="eyebrow" data-k="me">{e('me')}</p><h2 data-k="mh">{e('mh')}</h2><p style="color:#c9c9c3" data-k="mp">{e('mp')}</p></div>
-<div class="phones"><img src="{R}screens/fuel-mobile-frame.png" alt="Fuel on a phone" loading="lazy"><img src="{R}screens/labs-mobile-frame.png" alt="Labs on a phone" loading="lazy"></div></div></section>
+<div class="phones"><img src="{R}screens/fuel-mobile-frame.png" alt="Fuel on a phone"><img src="{R}screens/labs-mobile-frame.png" alt="Labs on a phone"></div></div></section>
 <section><div class="wrap"><p class="eyebrow" data-k="he">{e('he')}</p><h2 data-k="hh">{e('hh')}</h2><div class="list">{how}</div></div></section>
 <section><div class="wrap"><p class="eyebrow" data-k="de">{e('de')}</p><h2 data-k="dh">{e('dh')}</h2><div class="list">{decisions}</div></div></section>
 <section><div class="wrap two"><div><p class="eyebrow" data-k="ye">{e('ye')}</p><h2 data-k="yh">{e('yh')}</h2></div><div><p data-k="y1">{e('y1')}</p><div class="sw">{sw}</div><p data-k="y2">{e('y2')}</p></div></div></section>
