@@ -106,11 +106,11 @@ body.embed .wf-bar,body.embed .wf-foot{display:none}body.embed .wf-main{padding:
 <header class="wf-bar"><div class="in">
 <a class="wf-logo" href="../"><i>WF</i><b>Performance</b></a>
 <nav class="wf-tabs" aria-label="Apps"><a href="../fuel/">Fuel</a><a href="../labs/" aria-current="page">Labs</a></nav>
-<span class="wf-sp"></span><span class="wf-pill">Sample data</span>
+<span class="wf-sp"></span><span class="wf-pill">Sample data · Leo</span>
 <button class="wf-ib" id="wf-theme" type="button" aria-label="Switch light or dark"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></button>
 </div></header>
 <main class="wf-main">
-<style>
+<script>window.LX_WHO="Leo";</script><style>
 .lx *{font-family:inherit}
 .lx{font-family:var(--font-anthropic-sans);color:var(--color-fg);display:flex;flex-direction:column;gap:38px}
 .lx p{margin:0;line-height:1.55}
@@ -169,6 +169,17 @@ body.embed .wf-bar,body.embed .wf-foot{display:none}body.embed .wf-main{padding:
 .lx-step li{display:grid;grid-template-columns:18px 1fr;gap:8px}
 .lx details summary{cursor:pointer;font-weight:var(--cds-font-weight-medium)}
 @media (max-width:520px){.lx-hero{padding:20px;border-radius:22px}.lx-ring{grid-template-columns:120px 1fr}}
+.lx-ib{display:inline-grid;place-items:center;width:18px;height:18px;margin-left:6px;border-radius:50%;border:1px solid var(--color-border-line);background:var(--color-panel);color:var(--color-fg-muted);font:600 11px/1 var(--font-anthropic-sans);font-style:italic;cursor:pointer;vertical-align:middle;padding:0;flex:none}
+.lx-ib:hover,.lx-ib:focus-visible{border-color:#2f6fec;color:#2f6fec;background:color-mix(in srgb,#2f6fec 10%,transparent)}
+.lx-ov{position:fixed;inset:0;z-index:50;background:rgba(6,14,30,.55);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;padding:16px}
+.lx-sheet{width:min(520px,100%);max-height:88vh;overflow:auto;background:var(--color-panel);color:var(--color-fg);border:1px solid var(--color-border-line);border-radius:24px;padding:20px;display:flex;flex-direction:column;gap:12px;box-shadow:0 30px 80px rgba(6,14,30,.35)}
+.lx-sheet h3{margin:2px 0 0;font-size:22px;font-weight:700;letter-spacing:-.01em}
+.lx-sheet .row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.lx-x{width:34px;height:34px;border-radius:50%;border:1px solid var(--color-border-line);background:none;color:var(--color-fg);cursor:pointer;font-size:14px;flex:none}
+.lx-isec{border-top:1px solid var(--color-border-line);padding-top:10px}
+.lx-ih{display:flex;align-items:center;gap:6px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:650;color:var(--color-fg-muted);margin-bottom:4px}
+.lx-isec p{font-size:14px;line-height:1.5}
+@media(max-width:560px){.lx-ov{align-items:flex-end;padding:0}.lx-sheet{border-radius:24px 24px 0 0;max-height:85vh}}
 </style>
 
 <div class="lx">
@@ -200,7 +211,7 @@ body.embed .wf-bar,body.embed .wf-foot{display:none}body.embed .wf-main{padding:
 <section class="lx-sec" id="explore">
   <div class="lx-head"><span data-draw="icon" data-ic="chart"></span><h2>Explore any marker</h2></div>
   <div class="lx-explore">
-    <select class="dash-select" data-draw="picker" data-source="latest" aria-label="Marker"></select>
+    <select class="dash-select" data-draw="picker" data-source="latest" aria-label="Marker"></select><span data-draw="pickinfo" data-source="latest"></span>
     <div class="lx-chart" data-draw="explore" data-source="labs"></div>
   </div>
 </section>
@@ -219,6 +230,7 @@ body.embed .wf-bar,body.embed .wf-foot{display:none}body.embed .wf-main{padding:
     <p class="lx-muted" style="margin-top:8px">ApoB counts the particles that carry cholesterol into artery walls; LDL is the cholesterol they carry. Lp(a) is a genetic particle. hs-CRP measures inflammation. TSH is the brain's signal to the thyroid. eGFR estimates kidney filtration from creatinine, which runs high in muscular people; cystatin C ignores muscle. PTH controls calcium. Ferritin is stored iron. Fructosamine reflects blood sugar over 2–3 weeks. GGT is a liver enzyme that rises with alcohol and liver fat. Educational only — review with your doctor. Get checked promptly for chest pain on exertion, fainting, unusual breathlessness or palpitations.</p>
   </details>
 </section>
+<div data-draw="info" data-source="latest labs"></div>
 </div>
 
 <script>
@@ -275,7 +287,7 @@ dash.draw('ring',(el)=>{const d=dash.data('status_counts');el.replaceChildren();
 
 dash.draw('focus',(el)=>{const L=LX.latest();const labs=dash.data('labs');el.replaceChildren();if(!L||labs.status!=='ok'){el.textContent=LX.err(dash.data('latest').status);return;}
   LX.FOCUS.forEach(([m,ic])=>{const r=L.find(x=>x.marker===m);if(!r)return;const [cls,col]=LX.ST[r.status];const c=LX.el('div','lx-tile');c.id='focus-'+m;
-    const top=LX.el('div','row');const left=LX.el('div','row');left.append(LX.badge(ic,col),LX.el('span','lx-eye',m));top.append(left,LX.el('span','lx-pill '+cls,r.status));
+    const top=LX.el('div','row');const left=LX.el('div','row');left.append(LX.badge(ic,col),LX.el('span','lx-eye',m),LX.ib(m));top.append(left,LX.el('span','lx-pill '+cls,r.status));
     const v=LX.el('div');v.append(LX.mark(LX.el('span','lx-val',r.qualifier+r.value),'latest','value','marker='+encodeURIComponent(m)),LX.el('span','lx-unit',r.unit));
     const sp=LX.el('div');const mt=LX.el('div');c.append(top,v,sp,mt);
     const bottom=LX.el('div','row');if(r.change!=null){const d=LX.el('span','lx-delta');const up=r.change>0;const good=r.target_min!=null?up:!up;d.style.color=r.change===0?'var(--color-fg-muted)':good?'var(--color-ok)':'var(--color-bad)';d.append(document.createTextNode(up?'▲ ':'▼ '),LX.mark(LX.el('span',null,String(Math.abs(r.change))),'latest','change','marker='+encodeURIComponent(m)),document.createTextNode(' since '+LX.fmt(LX.parse(r.prev_date))));bottom.append(d);}
@@ -291,7 +303,7 @@ dash.draw('heat',(el)=>{const M=dash.data('matrix');const labs=dash.data('labs')
   const h0=LX.el('th','m','Marker');h0.setAttribute('data-field','marker');hr.append(h0);dates.forEach(d=>{const h=LX.el('th',null,LX.fmtH(LX.parse(d)));h.setAttribute('data-field',d);h.title=LX.fmtD(LX.parse(d));hr.append(h);});
   const body=tb.createTBody();const rows=M.data;
   LX.SYS.forEach(([name,ic,ms])=>{const list=ms.map(m=>rows.find(r=>r.marker===m)).filter(Boolean);if(!list.length)return;const g=body.insertRow();g.className='grp';const gc=g.insertCell();gc.colSpan=dates.length+1;gc.textContent=name;
-    list.forEach(r=>{const tr=body.insertRow();tr.setAttribute('data-key',encodeURIComponent(r.marker));const mc=tr.insertCell();mc.className='m';mc.append(LX.el('span',null,r.marker),LX.el('span','lx-muted',' '+r.unit));
+    list.forEach(r=>{const tr=body.insertRow();tr.setAttribute('data-key',encodeURIComponent(r.marker));const mc=tr.insertCell();mc.className='m';mc.append(LX.el('span',null,r.marker),LX.ib(r.marker),LX.el('span','lx-muted',' '+r.unit));
       dates.forEach(d=>{const td=tr.insertCell();const v=r[d];if(v==null){td.textContent='';return;}td.textContent=v;const src=flag[r.marker+'|'+d];const t=T[r.marker];const n=+src.value;
         const watch=t&&((t.target_max!=null&&n>t.target_max)||(t.target_min!=null&&n<t.target_min));const c=src.flag==='H'?'var(--color-bad)':watch?'var(--color-warn)':'var(--color-ok)';td.style.background=LX.tint(c,src.flag==='H'?30:watch?22:12);if(src.flag==='H')td.style.fontWeight='600';});});});
   el.append(tb);});
@@ -299,11 +311,11 @@ dash.draw('heat',(el)=>{const M=dash.data('matrix');const labs=dash.data('labs')
 dash.draw('systems',(el)=>{const L=LX.latest();el.replaceChildren();if(!L){el.textContent=LX.err(dash.data('latest').status);return;}
   LX.SYS.forEach(([name,ic,ms])=>{const rows=ms.map(m=>L.find(x=>x.marker===m)).filter(Boolean);if(!rows.length)return;const worst=rows.some(r=>r.status==='High')?'High':rows.some(r=>r.status==='Watch')?'Watch':'In range';const [cls,col]=LX.ST[worst];
     const c=LX.el('div','lx-card');c.id='sys-'+name.replace(/\W/g,'');const h=LX.el('div','row');h.append(LX.badge(ic,col),LX.el('h3',null,name),LX.el('span','lx-pill '+cls,worst==='High'?'Needs attention':worst==='Watch'?'Watch':'Good'));c.append(h);el.append(c);
-    rows.forEach(r=>{const m=LX.el('div','lx-m');const val=LX.el('span','v');val.append(LX.mark(LX.el('span',null,r.qualifier+r.value),'latest','value','marker='+encodeURIComponent(r.marker)),LX.el('span','lx-unit',r.unit));m.append(LX.el('span','n',r.marker),val);c.append(m);
+    rows.forEach(r=>{const m=LX.el('div','lx-m');const val=LX.el('span','v');val.append(LX.mark(LX.el('span',null,r.qualifier+r.value),'latest','value','marker='+encodeURIComponent(r.marker)),LX.el('span','lx-unit',r.unit));const nm=LX.el('span','n',r.marker);nm.append(LX.ib(r.marker));m.append(nm,val);c.append(m);
       LX.meter(m,r,Math.max(220,(c.clientWidth||300)-36));m.append(LX.el('span','lx-muted meta',(r.ref_low!=null||r.ref_high!=null?'Range '+(r.ref_low??'')+'–'+(r.ref_high??'')+' · ':'')+LX.fmt(LX.parse(r.date))+(r.draws>1?' · '+r.draws+' draws':'')));});});});
 
 LX.pick=LX.pick||'LDL';
-dash.draw('picker',(sel)=>{const L=LX.latest();sel.replaceChildren();if(!L)return;const order=LX.SYS.flatMap(s=>s[2]);const ms=L.map(r=>r.marker).sort((a,b)=>{const ia=order.indexOf(a),ib=order.indexOf(b);return (ia<0?99:ia)-(ib<0?99:ib)||(a<b?-1:1);});ms.forEach(m=>sel.append(new Option(m,m)));sel.value=LX.pick;sel.onchange=()=>{LX.pick=sel.value;dash.draw('explore');};});
+dash.draw('picker',(sel)=>{const L=LX.latest();sel.replaceChildren();if(!L)return;const order=LX.SYS.flatMap(s=>s[2]);const ms=L.map(r=>r.marker).sort((a,b)=>{const ia=order.indexOf(a),ib=order.indexOf(b);return (ia<0?99:ia)-(ib<0?99:ib)||(a<b?-1:1);});ms.forEach(m=>sel.append(new Option(m,m)));sel.value=LX.pick;sel.onchange=()=>{LX.pick=sel.value;dash.draw('explore');dash.draw('pickinfo');};});
 
 dash.draw('explore',(el)=>{const d=dash.data('labs');const L=LX.latest();el.replaceChildren();if(d.status!=='ok'){el.textContent=LX.err(d.status);return;}
   const m=LX.pick;const rows=d.data.filter(r=>r.marker===m).map(r=>({...r,dt:LX.parse(r.date),v:+r.value})).sort((a,b)=>a.dt-b.dt);if(!rows.length){el.textContent='No results.';return;}
@@ -323,7 +335,76 @@ dash.draw('explore',(el)=>{const d=dash.data('labs');const L=LX.latest();el.repl
   const showAll=rows.length<=8&&W>360;svg.selectAll('text.lb').data(showAll?rows:[last]).join('text').attr('class','lb').attr('x',r=>x(r.dt)).attr('y',r=>y(r.v)-12).attr('text-anchor','middle').text(r=>(r.qualifier||'')+r.value).style('fill','var(--color-fg)').style('font-size','12px').style('font-weight','600');
   const tip=LX.el('div','lx-tip');tip.hidden=true;el.append(tip);
   svg.on('pointermove',(ev)=>{const [px]=d3.pointer(ev);const r=rows.reduce((p,q)=>Math.abs(x(q.dt)-px)<Math.abs(x(p.dt)-px)?q:p);tip.replaceChildren(LX.el('div',null,LX.fmtD(r.dt)+' · '+r.lab),LX.el('div',null,(r.qualifier||'')+r.value+' '+r.unit+(r.flag==='H'?' (high)':'')));tip.hidden=false;const sx=el.clientWidth/W;tip.style.left=Math.max(0,Math.min(el.clientWidth-tip.offsetWidth,x(r.dt)*sx-tip.offsetWidth/2))+'px';tip.style.top=Math.max(0,y(r.v)*sx-tip.offsetHeight-14)+'px';}).on('pointerleave',()=>{tip.hidden=true;});});
+LX.INFO={
+'Total cholesterol':['All the cholesterol in your blood: the LDL that can build up in arteries plus the HDL that clears it. On its own it says little.','Use it as a summary only. ApoB, LDL and non-HDL tell you more about heart risk.'],
+'LDL':['“Bad” cholesterol: the cholesterol carried by particles that can lodge in artery walls.','Running does not lower LDL much. Diet (fiber, less saturated fat), genetics and sometimes medication do.'],
+'HDL':['“Good” cholesterol: particles that carry cholesterol away from the arteries back to the liver.','Endurance training tends to raise it. Higher is generally better.'],
+'Triglycerides':['Fat carried in the blood, mostly from recent meals, sugar and alcohol.','Rises with alcohol, sweets and late heavy meals. Usually falls with consistent training.'],
+'Non-HDL':['Total cholesterol minus HDL: all the particles that can clog arteries in one number.','A good single summary of heart risk from cholesterol. Moves with LDL and triglycerides.'],
+'ApoB':['A count of the particles that carry cholesterol into artery walls. Each one has one ApoB.','Considered the most direct cholesterol risk marker. It moves with diet, weight and medication, not with mileage.'],
+'Lp(a)':['A sticky cholesterol particle set mostly by your genes.','It barely changes with diet or training, so one test is usually enough. A high value means keeping LDL and ApoB lower.'],
+'Remnant cholesterol':['Cholesterol in the leftover particles after fat from food is processed.','Tracks with triglycerides. Falls with less alcohol and sugar.'],
+'TSH':['The brain’s signal telling the thyroid to work harder. High TSH means the thyroid needs more push.','Hard training blocks, poor sleep and low energy intake can nudge it. Recheck when rested.'],
+'T4':['The main hormone the thyroid makes (total amount).','Read it together with TSH and free T4.'],
+'T3':['The active thyroid hormone that sets how fast the body burns energy.','Can dip with low calorie intake or very heavy training.'],
+'Free T4':['The unbound, usable part of T4 that tissues can actually use.','Normal free T4 with a mildly high TSH is usually just something to watch.'],
+'Free T3':['The unbound, active thyroid hormone.','Drops when energy intake does not match training. A useful under-fueling check.'],
+'TPO antibody':['Antibodies against the thyroid. They show whether the immune system targets it.','Negative means an autoimmune thyroid problem is unlikely.'],
+'PSA':['A protein made by the prostate, used to screen for prostate problems.','Long rides and hard efforts can raise it briefly. Avoid cycling and hard sessions 48 h before the test.'],
+'Glucose':['Blood sugar at the moment of the draw.','Fasting values are what matter. A big carb dinner or a hard morning session can shift it.'],
+'Fructosamine':['Average blood sugar over the last 2–3 weeks.','Less affected by one meal than glucose. Useful during high-carb training blocks.'],
+'Uric acid':['A waste product from breaking down purines (red meat, seafood, alcohol, fructose).','Dehydration and hard efforts raise it. High levels can cause gout.'],
+'Creatinine':['A waste product from muscle, cleared by the kidneys.','Runs naturally higher in muscular, active people and after hard training or a lot of protein.'],
+'eGFR':['An estimate of how well the kidneys filter, calculated from creatinine.','Can look low in athletes because creatinine is high from muscle. Cystatin C gives a cleaner reading.'],
+'BUN':['Urea nitrogen: a waste product from protein, cleared by the kidneys.','Rises with high protein intake and dehydration.'],
+'Cystatin C':['A kidney filtration marker that does not depend on muscle mass.','The fairer kidney check for muscular athletes.'],
+'Urine albumin/creatinine':['How much protein leaks into the urine.','Hard exercise can cause a temporary leak. Test on a rest day.'],
+'Urine creatinine 24h':['Total creatinine passed in a full day of urine.','Mostly used to check that a 24-hour urine collection was complete.'],
+'Calcium':['Calcium in the blood, kept in a tight range by hormones (PTH and vitamin D).','Repeated high values are worth a doctor’s look: ionized calcium, PTH, vitamin D intake and supplements.'],
+'Albumin':['The main protein in blood. It also carries calcium.','Dehydration raises it, and with it total calcium. Hydrate well before the draw.'],
+'PTH':['Parathyroid hormone, which raises blood calcium when it gets low.','Normal PTH with high calcium is a key clue for the doctor.'],
+'Vitamin D':['Vitamin D stored in the body. It helps absorb calcium and supports bones and muscles.','Sun in Miami helps, but supplements can push it too high. Check before adding more.'],
+'ALT':['A liver enzyme. It rises when liver cells are stressed.','Can rise for a few days after very hard or long sessions, from muscle as well as liver.'],
+'AST':['An enzyme found in liver and muscle.','Often high after long runs and races because of muscle damage. Test after 2 easy days.'],
+'ALP':['An enzyme from liver and bone.','Can be higher in people building bone or with liver bile issues.'],
+'GGT':['A liver enzyme that rises with alcohol, liver fat and some medications.','One of the most alcohol-sensitive markers. Usually falls after a few dry weeks.'],
+'Hemoglobin':['The oxygen-carrying protein in red blood cells.','Directly linked to endurance. Training can dilute it a little (more plasma).'],
+'Hematocrit':['The share of blood made of red cells.','Low values can mean low iron. Dehydration makes it read higher.'],
+'Platelets':['Cells that help blood clot.','Usually unaffected by training. Values far from range need a recheck.'],
+'WBC':['White blood cells: the immune system’s soldiers.','Can dip in heavy training blocks and rise with infection or right after a hard session.'],
+'Ferritin':['Stored iron, the body’s iron reserve.','Runners lose iron through foot strike, sweat and the gut. Low ferritin can mean fatigue before anemia shows.'],
+'Testosterone (total)':['The main male hormone, important for muscle repair and energy.','Can fall with very high training load, low calorie intake and poor sleep.'],
+'Cortisol':['The stress hormone, highest in the morning.','Early draws and hard training raise it. Compare at the same time of day.'],
+'Estradiol':['The main estrogen. Men need some for bone and heart health.','Usually read together with testosterone and SHBG.'],
+'SHBG':['A protein that binds sex hormones and decides how much is free to use.','Rises with high endurance volume and low energy intake.'],
+'hs-CRP':['A sensitive marker of inflammation anywhere in the body.','Spikes for a day or two after hard sessions and when sick. Test after easy days.'],
+};
+LX.WHO=window.LX_WHO||null;
+LX.ib=m=>{const b=LX.el('button','lx-ib');b.type='button';b.setAttribute('aria-label','About '+m);b.title='What is '+m+'?';b.textContent='i';b.onclick=e=>{e.stopPropagation();LX.info=m;dash.draw('info');};return b;};
+LX.story=(m)=>{const d=dash.data('labs');const L=LX.latest();if(d.status!=='ok')return '';const rs=d.data.filter(r=>r.marker===m).sort((a,b)=>a.date<b.date?-1:1);if(!rs.length)return '';
+  const who=LX.WHO?LX.WHO+'’s':'Your',f=rs[0],l=rs[rs.length-1],u=l.unit,lr=L&&L.find(x=>x.marker===m);const out=[];
+  if(rs.length===1)out.push(`${who} only result is ${l.qualifier||''}${l.value} ${u} (${LX.fmt(LX.parse(l.date))}).`);
+  else{const a=+f.value,b=+l.value,pct=a?Math.round((b-a)/a*100):0;const dir=Math.abs(pct)<5?'held steady':pct>0?'rose':'fell';
+    out.push(`${who} ${rs.length} results since ${LX.fmt(LX.parse(f.date))}: from ${f.qualifier||''}${f.value} to ${l.qualifier||''}${l.value} ${u}. It ${dir}${Math.abs(pct)>=5?' '+Math.abs(pct)+'%':''}.`);}
+  const hi=rs.filter(r=>r.flag==='H').length,lo=rs.filter(r=>r.flag==='L').length;
+  if(hi)out.push(`The lab flagged it high ${hi===rs.length?'every time':hi===1?'once':hi+' times'}.`);if(lo)out.push(`The lab flagged it low ${lo===1?'once':lo+' times'}.`);
+  if(lr){if(lr.status==='High')out.push('The latest result is above the lab range — worth raising with the doctor.');
+    else if(lr.status==='Watch')out.push(`The latest result is inside the lab range but ${lr.target_max!=null?'above':'below'} the athlete target (${lr.target_max!=null?'<'+lr.target_max:'>'+lr.target_min} ${u}).`);
+    else if(!hi)out.push('The latest result is in range.');
+    else out.push('The latest result is back in range.');}
+  return out.join(' ');};
+dash.draw('info',(el)=>{el.replaceChildren();const m=LX.info;if(!m)return;const L=LX.latest();const r=L&&L.find(x=>x.marker===m);const I=LX.INFO[m]||['A lab marker from the panel.','Ask your doctor what it means for you.'];
+  const close=()=>{LX.info=null;dash.draw('info');};
+  const ov=LX.el('div','lx-ov');ov.onclick=e=>{if(e.target===ov)close();};const card=LX.el('div','lx-sheet');card.setAttribute('role','dialog');card.setAttribute('aria-modal','true');card.setAttribute('aria-label','About '+m);
+  const top=LX.el('div','row');const t=LX.el('div');t.append(LX.el('span','lx-eye',r?r.category||'Marker':'Marker'),LX.el('h3',null,m));const x=LX.el('button','lx-x','✕');x.type='button';x.setAttribute('aria-label','Close');x.onclick=close;top.append(t,x);card.append(top);
+  if(r){const [cls,col]=LX.ST[r.status];const v=LX.el('div','row');const vv=LX.el('div');vv.append(LX.mark(LX.el('span','lx-val',r.qualifier+r.value),'latest','value','marker='+encodeURIComponent(m)),LX.el('span','lx-unit',r.unit));v.append(vv,LX.el('span','lx-pill '+cls,r.status));card.append(v);
+    const sp=LX.el('div');card.append(sp);const hist=dash.data('labs').data.filter(z=>z.marker===m).map(z=>({dt:LX.parse(z.date),v:+z.value,flag:z.flag})).sort((a,b)=>a.dt-b.dt);if(hist.length>1)requestAnimationFrame(()=>LX.spark(sp,hist,Math.max(240,sp.clientWidth||300),col));}
+  [['What it is',I[0],'flask'],['For a runner',I[1],'heart'],[LX.WHO?LX.WHO+'’s history':'Your history',LX.story(m),'chart']].forEach(([h,p,ic])=>{if(!p)return;const s=LX.el('div','lx-isec');const hh=LX.el('div','lx-ih');hh.append(LX.svg(ic,15,dash.colors[1]),LX.el('span',null,h));s.append(hh,LX.el('p',null,p));card.append(s);});
+  card.append(LX.el('p','lx-muted','Educational only — review your results with your doctor.'));
+  ov.append(card);el.append(ov);x.focus();
+  const esc=e=>{if(e.key==='Escape'){document.removeEventListener('keydown',esc);close();}};document.addEventListener('keydown',esc);});
+dash.draw('pickinfo',(el)=>{el.replaceChildren();if(LX.latest()&&LX.pick)el.append(LX.ib(LX.pick));});
 </script>
 </main>
-<footer class="wf-foot"><span>Labs · sample values · educational only, not medical advice</span><span>·</span><a href="https://www.wendelfreitas.com/fuel-and-labs/">Case study</a><a href="https://github.com/wendel-crypto/fuel-and-labs">GitHub</a></footer>
+<footer class="wf-foot"><span>Labs · Leo’s sample values · educational only, not medical advice</span><span>·</span><a href="https://www.wendelfreitas.com/fuel-and-labs/">Case study</a><a href="https://github.com/wendel-crypto/fuel-and-labs">GitHub</a></footer>
 </body></html>

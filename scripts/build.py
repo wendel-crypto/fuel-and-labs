@@ -27,6 +27,15 @@ BLOB = {
     'toast_avocado': 'f501ad9c395faaa34a957a0723e7f8b5', 'watermelon_juice': '0596cb15a14397ffa010e57447189874',
     'yogurt_granola': 'fc610539d882e42cb0f6628a950cd41d',
 }
+BLOB.update({
+    'electrolyte': 'a567c87682371d47a127e4effaff6a58',
+    'gels': 'c23d15523a4edaf9ba2ac670578948d2',
+    'kiwi_tea': '8015fe8556279da9596bcc8183cbe115',
+    'track': '820e8ea69f12a15f271fad194f9efd0d',
+    'race': 'ec3f5e10ba16caf9981dcaf146f4916b',
+    'easy_run': '0a0437e90901274a20d183b959ba24e2',
+    'long_run': '074bc0105c73c4c4067591b032f28a4a',
+})
 BLOB2FILE = {v: k for k, v in BLOB.items()}
 
 
@@ -108,7 +117,7 @@ body.embed .wf-bar,body.embed .wf-foot{{display:none}}body.embed .wf-main{{paddi
 <header class="wf-bar"><div class="in">
 <a class="wf-logo" href="../"><i>WF</i><b>Performance</b></a>
 <nav class="wf-tabs" aria-label="Apps"><a href="../fuel/"{fuel_cur}>Fuel</a><a href="../labs/"{labs_cur}>Labs</a></nav>
-<span class="wf-sp"></span><span class="wf-pill">Sample data</span>
+<span class="wf-sp"></span><span class="wf-pill">Sample data · Leo</span>
 <button class="wf-ib" id="wf-theme" type="button" aria-label="Switch light or dark"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></button>
 </div></header>
 <main class="wf-main">
@@ -165,16 +174,16 @@ def main():
     fuel = fuel.replace('Targets use your Garmin weight', 'Targets use body weight')
     write('fuel', 'Fuel — Performance Nutrition Planner', 'Fuel',
           'Daily carbs, protein and fat for every session of a 22-week marathon build, with meals, recipes, juices, weather and a weekly grocery cart.',
-          'Fuel · 70 kg sample athlete · weather is a saved Miami forecast', fuel, fuel_data)
+          'Fuel · Leo, a 70 kg sample athlete · weather is a saved Miami forecast', fuel, fuel_data)
     # ---- Labs
     if labs_src:
         labs = list(csv.DictReader(open(labs_src, encoding='utf-8')))
     else:
         labs = rows('labs_demo.csv')
-    lp = page_body('labs.page.html').replace('Book Dr. Pimentel and bring all 7 reports', 'Book your physician and bring all 7 reports')
+    lp = '<script>window.LX_WHO="Leo";</script>' + page_body('labs.page.html').replace('Book Dr. Pimentel and bring all 7 reports', 'Book your physician and bring all 7 reports')
     write('labs', 'Labs — Health & Lab Results', 'Labs',
           'Seven blood panels from 2023–2026 in one view: focus markers, a heatmap of every result, body systems, trends and an action plan.',
-          'Labs · sample values · educational only, not medical advice', lp, {'labs': labs})
+          'Labs · Leo’s sample values · educational only, not medical advice', lp, {'labs': labs})
 
 
 if __name__ == '__main__':
