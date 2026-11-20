@@ -1,0 +1,215 @@
+<meta name="dash-one-writer">
+<style>
+.lx *{font-family:inherit}
+.lx{font-family:var(--font-anthropic-sans);color:var(--color-fg);display:flex;flex-direction:column;gap:38px}
+.lx p{margin:0;line-height:1.55}
+.lx h2{font-family:var(--font-anthropic-sans);font-weight:650;font-size:22px;margin:0;letter-spacing:-.01em}
+.lx-eye{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:var(--cds-font-weight-medium);opacity:.75}
+.lx-muted{color:var(--color-fg-muted);font-size:var(--cds-font-size-caption)}
+.lx-sec{display:flex;flex-direction:column;gap:14px}
+.lx-head{display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--color-border-line);padding-bottom:10px;flex-wrap:wrap}
+.lx-head .lx-muted{margin-left:auto}
+.lx-hero{background:radial-gradient(120% 140% at 100% 0%,rgba(14,165,183,.55) 0%,rgba(14,165,183,0) 55%),linear-gradient(135deg,#0b1f3a 0%,#1746a0 70%,#2f6fec 100%);color:#fff;border-radius:28px;padding:26px;display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));align-items:center}
+.lx-hero h1{font-family:var(--font-anthropic-sans);font-weight:700;font-size:clamp(28px,5vw,46px);line-height:1.04;margin:8px 0 12px;letter-spacing:-.015em}
+.lx-hero p{opacity:.85;font-size:14px}
+.lx-ring{display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:center;min-height:150px}
+.lx-leg{display:flex;flex-direction:column;gap:8px;font-size:13px}
+.lx-leg span{display:flex;align-items:center;gap:8px}
+.lx-leg i{width:10px;height:10px;border-radius:50%}
+.lx-leg b{font-variant-numeric:tabular-nums;font-size:18px;min-width:24px}
+.lx-focus{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));min-height:220px}
+.lx-tile{background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:22px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.lx-tile .row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.lx-badge{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;flex:none}
+.lx-val{font-family:var(--font-anthropic-sans);font-weight:700;letter-spacing:-.03em;font-size:44px;line-height:1;font-variant-numeric:tabular-nums}
+.lx-unit{font-size:12px;color:var(--color-fg-muted);margin-left:4px}
+.lx-pill{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:var(--cds-font-weight-medium);border-radius:999px;padding:3px 10px;white-space:nowrap}
+.lx-pill::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.lx-pill.bad{color:var(--color-bad);background:color-mix(in srgb,var(--color-bad) 12%,transparent)}
+.lx-pill.warn{color:var(--color-warn);background:color-mix(in srgb,var(--color-warn) 14%,transparent)}
+.lx-pill.ok{color:var(--color-ok);background:color-mix(in srgb,var(--color-ok) 12%,transparent)}
+.lx-delta{font-size:12px;font-variant-numeric:tabular-nums;font-weight:var(--cds-font-weight-medium)}
+.lx-heat{overflow-x:auto;border:1px solid var(--color-border-line);border-radius:20px;background:var(--color-panel);min-height:200px}
+.lx-heat table{border-collapse:separate;border-spacing:3px;width:100%;font-size:12px;padding:6px}
+.lx-heat th{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-fg-muted);font-weight:var(--cds-font-weight-medium);padding:6px 4px;text-align:center;white-space:nowrap}
+.lx-heat th.m,.lx-heat td.m{text-align:left;position:sticky;left:0;background:var(--color-panel);white-space:nowrap;padding-right:10px}
+.lx-heat td{text-align:center;border-radius:8px;padding:7px 4px;font-variant-numeric:tabular-nums;min-width:52px}
+.lx-heat tr.grp td{background:transparent;text-align:left;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-fg-muted);padding-top:12px}
+.lx-key{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--color-fg-muted)}
+.lx-key span{display:inline-flex;align-items:center;gap:6px}
+.lx-key i{width:14px;height:14px;border-radius:4px}
+.lx-sys{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));min-height:200px}
+.lx-card{background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:22px;padding:18px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.lx-card .row{display:flex;align-items:center;gap:10px}
+.lx-card h3{margin:0;font-size:16px;font-weight:var(--cds-font-weight-medium);flex:1}
+.lx-m{display:grid;grid-template-columns:1fr auto;gap:2px 10px;align-items:center;padding-top:10px;border-top:1px solid var(--color-border-line)}
+.lx-m .n{font-size:13px}
+.lx-m .v{font-variant-numeric:tabular-nums;font-weight:var(--cds-font-weight-medium);text-align:right}
+.lx-m svg.meter{grid-column:1/-1;display:block}
+.lx-m .meta{grid-column:1/-1}
+.lx-explore{background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:22px;padding:18px;display:flex;flex-direction:column;gap:12px}
+.lx-chart{position:relative;min-height:280px}
+.lx-chart svg{display:block;overflow:visible}
+.lx-tip{position:absolute;pointer-events:none;background:var(--cds-surface-popover);border:1px solid var(--cds-border);box-shadow:var(--cds-shadow-popover);border-radius:8px;padding:6px 9px;font-size:12px;white-space:nowrap;z-index:2}
+.lx-steps{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.lx-step{border-radius:22px;padding:18px;display:flex;flex-direction:column;gap:10px;border:1px solid var(--color-border-line);background:var(--color-panel)}
+.lx-step.now{background:linear-gradient(135deg,#0b1f3a,#1746a0);color:#fff;border-color:#1746a0}
+.lx-step ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:13px;line-height:1.45}
+.lx-step li{display:grid;grid-template-columns:18px 1fr;gap:8px}
+.lx details summary{cursor:pointer;font-weight:var(--cds-font-weight-medium)}
+@media (max-width:520px){.lx-hero{padding:20px;border-radius:22px}.lx-ring{grid-template-columns:120px 1fr}}
+</style>
+
+<div class="lx">
+<header class="lx-hero" id="top">
+  <div>
+    <span class="lx-eye">Health &amp; lab results · Mar 2023 – Nov 2026</span>
+    <h1>Cholesterol is the one to move. Calcium needs answers.</h1>
+    <p>ApoB <b data-draw="v" data-source="labs" data-field="value" data-where="marker=ApoB&amp;date=2026-11-17">—</b> mg/dL and LDL <b data-draw="v" data-source="labs" data-field="value" data-where="marker=LDL&amp;date=2026-11-17">—</b> mg/dL on Nov 17. Calcium above range on <b data-draw="v" data-source="calcium_flags" data-field="flagged" data-row="0">—</b> of <b data-draw="v" data-source="calcium_flags" data-field="draws" data-row="0">—</b> draws. Everything else is strong.</p>
+  </div>
+  <div class="lx-ring" data-draw="ring" data-source="status_counts" id="ring">—</div>
+</header>
+
+<section class="lx-sec" id="focus">
+  <div class="lx-head"><span data-draw="icon" data-ic="target"></span><h2>Focus markers</h2><span class="lx-muted">Latest · change vs previous draw</span></div>
+  <div class="lx-focus" data-draw="focus" data-source="latest labs"></div>
+</section>
+
+<section class="lx-sec" id="heatmap">
+  <div class="lx-head"><span data-draw="icon" data-ic="grid"></span><h2>Every result at a glance</h2><span class="lx-muted">7 draws · scroll sideways on phone</span></div>
+  <div class="lx-key" data-draw="key"></div>
+  <div class="lx-heat" data-draw="heat" data-source="matrix labs"></div>
+</section>
+
+<section class="lx-sec" id="systems">
+  <div class="lx-head"><span data-draw="icon" data-ic="body"></span><h2>By body system</h2><span class="lx-muted">Green band = lab range · tick = athlete target · hollow dot = previous</span></div>
+  <div class="lx-sys" data-draw="systems" data-source="latest"></div>
+</section>
+
+<section class="lx-sec" id="explore">
+  <div class="lx-head"><span data-draw="icon" data-ic="chart"></span><h2>Explore any marker</h2></div>
+  <div class="lx-explore">
+    <select class="dash-select" data-draw="picker" data-source="latest" aria-label="Marker"></select>
+    <div class="lx-chart" data-draw="explore" data-source="labs"></div>
+  </div>
+</section>
+
+<section class="lx-sec" id="actions">
+  <div class="lx-head"><span data-draw="icon" data-ic="check"></span><h2>What to do</h2></div>
+  <div class="lx-steps">
+    <div class="lx-step now" id="act-now"><span data-draw="icon" data-ic="steth" data-on="1"></span><span class="lx-eye">This week</span><ul><li><span data-draw="icon" data-ic="check" data-sm="1"></span><span>Book your physician and bring all 7 reports</span></li><li><span data-draw="icon" data-ic="check" data-sm="1"></span><span>Ask about lipid medication, a familial-cholesterol check and a CAC scan</span></li><li><span data-draw="icon" data-ic="check" data-sm="1"></span><span>Ask why calcium is high: ionized calcium, PTH, 24-h urine calcium, bone density</span></li><li><span data-draw="icon" data-ic="check" data-sm="1"></span><span>Start psyllium 5 g with dinner and 6 weeks without alcohol</span></li></ul></div>
+    <div class="lx-step" id="act-month"><span data-draw="icon" data-ic="leaf" data-bg="1"></span><span class="lx-eye">Next 8 weeks</span><ul><li><span data-draw="icon" data-ic="check" data-sm="1"></span><span>Plant sterols 2 g + omega-3 1–2 g daily</span></li><li><span data-draw="icon" data-ic="check" data-sm="1"></span><span>Fish 2–3×/week, olive oil over butter</span></li><li><span data-draw="icon" data-ic="check" data-sm="1"></span><span>Hold vitamin D, calcium and iron until cleared</span></li><li><span data-draw="icon" data-ic="check" data-sm="1"></span><span>Sleep 7.5–8 h at a fixed bedtime</span></li></ul></div>
+    <div class="lx-step" id="act-retest"><span data-draw="icon" data-ic="flask" data-bg="1"></span><span class="lx-eye">Retest · Mon Jan 25, 2027</span><ul><li><span data-draw="icon" data-ic="check" data-sm="1"></span><span>Lipids + ApoB, calcium, ionized calcium, PTH, vitamin D</span></li><li><span data-draw="icon" data-ic="check" data-sm="1"></span><span>TSH + free T4, CBC, ferritin, iron saturation</span></li><li><span data-draw="icon" data-ic="check" data-sm="1"></span><span>GGT, AST/ALT, fructosamine</span></li><li><span data-draw="icon" data-ic="check" data-sm="1"></span><span>Fasting; no hard run or alcohol 48 h before; no biotin for 3 days</span></li></ul></div>
+  </div>
+</section>
+
+<section class="lx-sec" id="defs">
+  <details><summary>What the markers mean</summary>
+    <p class="lx-muted" style="margin-top:8px">ApoB counts the particles that carry cholesterol into artery walls; LDL is the cholesterol they carry. Lp(a) is a genetic particle. hs-CRP measures inflammation. TSH is the brain's signal to the thyroid. eGFR estimates kidney filtration from creatinine, which runs high in muscular people; cystatin C ignores muscle. PTH controls calcium. Ferritin is stored iron. Fructosamine reflects blood sugar over 2–3 weeks. GGT is a liver enzyme that rises with alcohol and liver fat. Educational only — review with your doctor. Get checked promptly for chest pain on exertion, fainting, unusual breathlessness or palpitations.</p>
+  </details>
+</section>
+</div>
+
+<script>
+dash.calc('latest',{inputs:['labs'],title:'Latest result per marker',description:'Most recent result per marker, the one before it, the change, and a status: High if the lab flagged it, Watch if it misses an athlete target (ApoB <80, LDL <100, TSH <2.5, vitamin D >40, ferritin >100, GGT <40, fructosamine <260, hs-CRP <1, triglycerides <90).',fn:(labs)=>{
+  const T={'ApoB':{max:80},'LDL':{max:100},'TSH':{max:2.5},'Vitamin D':{min:40},'Ferritin':{min:100},'GGT':{max:40},'Fructosamine':{max:260},'hs-CRP':{max:1},'Triglycerides':{max:90},'Remnant cholesterol':{max:20}};
+  const by={};labs.forEach(r=>{(by[r.marker]=by[r.marker]||[]).push(r);});
+  return Object.values(by).map(rs=>{rs.sort((a,b)=>a.date<b.date?1:-1);const r=rs[0],p=rs[1];const v=+r.value;const t=T[r.marker];
+    const status=r.flag==='H'?'High':(t&&((t.max!=null&&v>t.max)||(t.min!=null&&v<t.min)))?'Watch':'In range';
+    return {marker:r.marker,category:r.category,date:r.date,lab:r.lab,value:v,qualifier:r.qualifier||'',unit:r.unit,ref_low:r.ref_low===''||r.ref_low==null?null:+r.ref_low,ref_high:r.ref_high===''||r.ref_high==null?null:+r.ref_high,target_max:t&&t.max!=null?t.max:null,target_min:t&&t.min!=null?t.min:null,status:status,prev_value:p?+p.value:null,prev_date:p?p.date:null,change:p&&!r.qualifier&&!p.qualifier?Math.round((v-+p.value)*100)/100:null,draws:rs.length};});}});
+dash.calc('status_counts',{inputs:['latest'],title:'Markers by status',description:'How many markers are high, on watch or in range at their latest result.',fn:(latest)=>['High','Watch','In range'].map(s=>({status:s,markers:latest.filter(r=>r.status===s).length}))});
+dash.calc('calcium_flags',{inputs:['labs'],title:'Calcium draws above range',description:'Number of calcium results and how many the lab flagged high.',fn:(labs)=>{const c=labs.filter(r=>r.marker==='Calcium');return [{draws:c.length,flagged:c.filter(r=>r.flag==='H').length}];}});
+dash.calc('matrix',{inputs:['labs'],title:'Results by draw',description:'One row per marker, one column per draw date, with the result shown as reported.',fn:(labs)=>{const m={};labs.forEach(r=>{m[r.marker]=m[r.marker]||{marker:r.marker,category:r.category,unit:r.unit};m[r.marker][r.date]=(r.qualifier||'')+r.value;});return Object.values(m);}});
+</script>
+
+<script>
+window.IC={target:'M12 3a9 9 0 1 0 .01 0M12 7a5 5 0 1 0 .01 0M12 11a1 1 0 1 0 .01 0',grid:'M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z',body:'M12 3a2 2 0 1 0 .01 0M8 21l1-8-3-1 1-5h10l1 5-3 1 1 8',chart:'M4 20V10M10 20V4M16 20v-7M22 20H2',check:'M5 12l5 5 9-10',
+ heart:'M12 20s-7.5-4.6-9.2-9.3A4.9 4.9 0 0 1 12 6.5a4.9 4.9 0 0 1 9.2 4.2C19.5 15.4 12 20 12 20z',bone:'M8 16l8-8M5.5 13.5a2.5 2.5 0 1 0 2.5 4.5 2.5 2.5 0 1 0 4.5-2.5M18.5 10.5A2.5 2.5 0 1 0 16 6a2.5 2.5 0 1 0-4.5 2.5',thyroid:'M12 5v14M12 9c-1.5-3-7-4-7 1.5S9.5 17 12 14M12 9c1.5-3 7-4 7 1.5S14.5 17 12 14',
+ kidney:'M10 4C6 4 4 8 4 12s2 8 5.5 8c2 0 2.5-2 1.5-4s-1-4 1-5 1.5-7-2-7zM15 9l3 1.5M15 15l3-1.5',flask:'M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3M7.5 14h9',drop:'M12 3s6 7 6 11.5a6 6 0 0 1-12 0C6 10 12 3 12 3z',
+ hormone:'M6 6a2 2 0 1 0 .01 0M18 6a2 2 0 1 0 .01 0M12 18a2 2 0 1 0 .01 0M8 6h8M7 8l4 8M17 8l-4 8',flame:'M12 3c1 4 6 6 6 11a6 6 0 0 1-12 0c0-3 2-5 3-6 0 2 1 3 2 3 0-3-1-5 1-8z',steth:'M6 3v6a4 4 0 0 0 8 0V3M10 13v3a4 4 0 0 0 8 0v-3M18 11a2 2 0 1 0 .01 0',leaf:'M5 19C5 10 10 5 20 4c-1 10-6 15-15 15zM5 19l8-8'};
+window.LX=window.LX||{};
+LX.SYS=[['Heart & lipids','heart',['ApoB','LDL','HDL','Triglycerides','Lp(a)']],['Calcium & bone','bone',['Calcium','PTH','Albumin','Vitamin D']],['Thyroid','thyroid',['TSH','Free T4','Free T3']],['Kidney','kidney',['eGFR','Creatinine','Cystatin C','Urine albumin/creatinine']],['Liver & metabolic','flask',['GGT','ALT','AST','Fructosamine','Glucose']],['Blood & iron','drop',['Hemoglobin','Platelets','WBC','Ferritin']],['Hormones','hormone',['Testosterone (total)','Cortisol','Estradiol','SHBG']],['Inflammation & screening','flame',['hs-CRP','PSA','Uric acid']]];
+LX.FOCUS=[['ApoB','heart'],['LDL','heart'],['Calcium','bone'],['TSH','thyroid']];
+LX.ST={'High':['bad','var(--color-bad)'],'Watch':['warn','var(--color-warn)'],'In range':['ok','var(--color-ok)']};
+LX.parse=d3.utcParse('%Y-%m-%d');LX.fmt=d3.utcFormat('%b %Y');LX.fmtD=d3.utcFormat('%b %-d, %Y');LX.fmtH=d3.utcFormat("%b '%y");
+LX.el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;};
+LX.mark=(e,s,f,w)=>{e.setAttribute('data-source',s);e.setAttribute('data-field',f);if(w)e.setAttribute('data-where',w);return e;};
+LX.tint=(c,p)=>`color-mix(in srgb, ${c} ${p}%, transparent)`;
+LX.svg=(name,size,color,w)=>{const ns='http://www.w3.org/2000/svg';const s=document.createElementNS(ns,'svg');s.setAttribute('viewBox','0 0 24 24');s.setAttribute('width',size);s.setAttribute('height',size);s.setAttribute('aria-hidden','true');const p=document.createElementNS(ns,'path');p.setAttribute('d',IC[name]||IC.check);p.setAttribute('fill','none');p.setAttribute('stroke',color||'currentColor');p.setAttribute('stroke-width',w||'1.8');p.setAttribute('stroke-linecap','round');p.setAttribute('stroke-linejoin','round');s.append(p);return s;};
+LX.badge=(ic,col,size)=>{const b=LX.el('span','lx-badge');b.style.background=LX.tint(col,16);if(size){b.style.width=b.style.height=size+'px';}b.append(LX.svg(ic,size?size*0.55:22,col));return b;};
+LX.latest=()=>{const d=dash.data('latest');return d.status==='ok'&&Array.isArray(d.data)?d.data:null;};
+LX.err=s=>s==='error'?'Lab results failed to load.':'—';
+LX.meter=(parent,r,W)=>{const H=24;const lo=r.ref_low,hi=r.ref_high,tv=r.target_max??r.target_min;const pts=[r.value,lo,hi,tv,r.prev_value].filter(v=>v!=null&&isFinite(v));let a=Math.min(...pts),b=Math.max(...pts);const pad=(b-a)*0.15||Math.abs(b)*0.1||1;a=Math.max(0,a-pad);b+=pad;
+  const x=d3.scaleLinear().domain([a,b]).range([6,W-6]);const svg=d3.select(parent).append('svg').attr('class','meter').attr('width','100%').attr('height',H).attr('viewBox',`0 0 ${W} ${H}`).attr('role','img').attr('aria-label',`${r.marker} ${r.value} ${r.unit}`);
+  svg.append('rect').attr('x',6).attr('width',W-12).attr('y',9).attr('height',6).attr('rx',3).style('fill','var(--color-border-line)');
+  const bl=lo!=null?x(lo):6,bh=hi!=null?x(hi):W-6;svg.append('rect').attr('x',bl).attr('width',Math.max(0,bh-bl)).attr('y',9).attr('height',6).attr('rx',3).style('fill','var(--color-ok)').style('opacity',0.4);
+  if(tv!=null)svg.append('line').attr('x1',x(tv)).attr('x2',x(tv)).attr('y1',4).attr('y2',20).style('stroke','var(--color-fg)').style('stroke-width',1.5);
+  if(r.prev_value!=null)svg.append('circle').attr('cx',x(r.prev_value)).attr('cy',12).attr('r',4).style('fill','var(--color-panel)').style('stroke','var(--color-fg-muted)').style('stroke-width',1.5);
+  svg.append('circle').attr('cx',x(r.value)).attr('cy',12).attr('r',7).style('fill',LX.ST[r.status][1]).style('stroke','var(--color-panel)').style('stroke-width',2.5);};
+LX.spark=(parent,rows,W,col)=>{const H=46;const x=d3.scaleUtc().domain(d3.extent(rows,r=>r.dt)).range([4,W-4]);const ext=d3.extent(rows,r=>r.v);const y=d3.scaleLinear().domain([ext[0]-(ext[1]-ext[0])*0.2-0.01,ext[1]+(ext[1]-ext[0])*0.2+0.01]).range([H-4,4]);
+  const svg=d3.select(parent).append('svg').attr('width','100%').attr('height',H).attr('viewBox',`0 0 ${W} ${H}`).attr('aria-hidden','true');
+  svg.append('path').datum(rows).attr('d',d3.area().x(r=>x(r.dt)).y0(H).y1(r=>y(r.v))).style('fill',LX.tint(col,14));
+  svg.append('path').datum(rows).attr('d',d3.line().x(r=>x(r.dt)).y(r=>y(r.v))).style('fill','none').style('stroke',col).style('stroke-width',2);
+  svg.selectAll('circle').data(rows).join('circle').attr('cx',r=>x(r.dt)).attr('cy',r=>y(r.v)).attr('r',(r,i)=>i===rows.length-1?4:2.5).style('fill',r=>r.flag==='H'?'var(--color-bad)':col);};
+
+dash.draw('icon',(el)=>{el.replaceChildren();const ic=el.getAttribute('data-ic');if(el.getAttribute('data-sm')){el.append(LX.svg(ic,16,el.closest('.now')?'currentColor':dash.colors[1],2.2));return;}if(el.getAttribute('data-on')){el.append(LX.svg(ic,26,'currentColor'));return;}if(el.getAttribute('data-bg')){el.append(LX.badge(ic,dash.colors[1],40));return;}el.append(LX.svg(ic,22,'currentColor'));});
+dash.draw('v',(el)=>{const d=dash.data(el.getAttribute('data-source'));if(d.status!=='ok'||!Array.isArray(d.data)){el.textContent='—';return;}let r;const w=el.getAttribute('data-where');if(w){const p=w.split('&').map(x=>x.split('=').map(decodeURIComponent));r=d.data.find(x=>p.every(([k,v])=>String(x[k])===v));}else r=d.data[+el.getAttribute('data-row')||0];const f=el.getAttribute('data-field');el.textContent=r&&r[f]!=null&&r[f]!==''?((f==='value'&&r.qualifier)?r.qualifier:'')+r[f]:'—';});
+
+dash.draw('ring',(el)=>{const d=dash.data('status_counts');el.replaceChildren();if(d.status!=='ok'||!d.data){el.textContent=LX.err(d.status);return;}
+  const total=d3.sum(d.data,x=>x.markers);const box=LX.el('div');box.style.position='relative';el.append(box);
+  const svg=d3.select(box).append('svg').attr('width','100%').attr('viewBox','0 0 150 150').attr('role','img').attr('aria-label',d.data.map(x=>x.markers+' '+x.status).join(', '));
+  const g=svg.append('g').attr('transform','translate(75,75)');g.selectAll('path').data(d3.pie().sort(null).padAngle(0.04).value(x=>x.markers)(d.data)).join('path').attr('d',d3.arc().innerRadius(50).outerRadius(70).cornerRadius(5)).style('fill',x=>LX.ST[x.data.status][1]);
+  const c=LX.el('div');c.style.cssText='position:absolute;inset:0;display:grid;place-content:center;text-align:center';const n=LX.el('b',null,String(total));n.style.cssText='font-family:var(--font-anthropic-sans);font-weight:700;font-weight:400;font-size:34px;line-height:1';c.append(n,LX.el('span','lx-eye','markers'));box.append(c);
+  const leg=LX.el('div','lx-leg');d.data.forEach(x=>{const s=LX.el('span');const i=LX.el('i');i.style.background=LX.ST[x.status][1];s.append(i,LX.mark(LX.el('b',null,String(x.markers)),'status_counts','markers','status='+encodeURIComponent(x.status)),document.createTextNode(x.status==='Watch'?'Watch (outside athlete target)':x.status));leg.append(s);});el.append(leg);});
+
+dash.draw('focus',(el)=>{const L=LX.latest();const labs=dash.data('labs');el.replaceChildren();if(!L||labs.status!=='ok'){el.textContent=LX.err(dash.data('latest').status);return;}
+  LX.FOCUS.forEach(([m,ic])=>{const r=L.find(x=>x.marker===m);if(!r)return;const [cls,col]=LX.ST[r.status];const c=LX.el('div','lx-tile');c.id='focus-'+m;
+    const top=LX.el('div','row');const left=LX.el('div','row');left.append(LX.badge(ic,col),LX.el('span','lx-eye',m));top.append(left,LX.el('span','lx-pill '+cls,r.status));
+    const v=LX.el('div');v.append(LX.mark(LX.el('span','lx-val',r.qualifier+r.value),'latest','value','marker='+encodeURIComponent(m)),LX.el('span','lx-unit',r.unit));
+    const sp=LX.el('div');const mt=LX.el('div');c.append(top,v,sp,mt);
+    const bottom=LX.el('div','row');if(r.change!=null){const d=LX.el('span','lx-delta');const up=r.change>0;const good=r.target_min!=null?up:!up;d.style.color=r.change===0?'var(--color-fg-muted)':good?'var(--color-ok)':'var(--color-bad)';d.append(document.createTextNode(up?'▲ ':'▼ '),LX.mark(LX.el('span',null,String(Math.abs(r.change))),'latest','change','marker='+encodeURIComponent(m)),document.createTextNode(' since '+LX.fmt(LX.parse(r.prev_date))));bottom.append(d);}
+    bottom.append(LX.el('span','lx-muted',LX.fmtD(LX.parse(r.date))));c.append(bottom);el.append(c);
+    const hist=labs.data.filter(x=>x.marker===m).map(x=>({dt:LX.parse(x.date),v:+x.value,flag:x.flag})).sort((a,b)=>a.dt-b.dt);
+    if(hist.length>1)LX.spark(sp,hist,Math.max(160,sp.clientWidth||200),dash.colors[1]);LX.meter(mt,r,Math.max(160,mt.clientWidth||200));});});
+
+dash.draw('key',(el)=>{el.replaceChildren();[['var(--color-bad)','Flagged high by the lab'],['var(--color-warn)','Outside athlete target'],['var(--color-ok)','In range']].forEach(([c,t])=>{const s=LX.el('span');const i=LX.el('i');i.style.background=LX.tint(c,30);s.append(i,document.createTextNode(t));el.append(s);});});
+
+dash.draw('heat',(el)=>{const M=dash.data('matrix');const labs=dash.data('labs');const L=LX.latest();el.replaceChildren();if(M.status!=='ok'||labs.status!=='ok'||!L){el.textContent=LX.err(M.status);return;}
+  const dates=[...new Set(labs.data.map(r=>r.date))].sort();const flag={};labs.data.forEach(r=>{flag[r.marker+'|'+r.date]=r;});const T={};L.forEach(r=>T[r.marker]=r);
+  const tb=LX.el('table');tb.setAttribute('data-source','matrix');tb.setAttribute('data-row-key','marker');const hr=tb.createTHead().insertRow();
+  const h0=LX.el('th','m','Marker');h0.setAttribute('data-field','marker');hr.append(h0);dates.forEach(d=>{const h=LX.el('th',null,LX.fmtH(LX.parse(d)));h.setAttribute('data-field',d);h.title=LX.fmtD(LX.parse(d));hr.append(h);});
+  const body=tb.createTBody();const rows=M.data;
+  LX.SYS.forEach(([name,ic,ms])=>{const list=ms.map(m=>rows.find(r=>r.marker===m)).filter(Boolean);if(!list.length)return;const g=body.insertRow();g.className='grp';const gc=g.insertCell();gc.colSpan=dates.length+1;gc.textContent=name;
+    list.forEach(r=>{const tr=body.insertRow();tr.setAttribute('data-key',encodeURIComponent(r.marker));const mc=tr.insertCell();mc.className='m';mc.append(LX.el('span',null,r.marker),LX.el('span','lx-muted',' '+r.unit));
+      dates.forEach(d=>{const td=tr.insertCell();const v=r[d];if(v==null){td.textContent='';return;}td.textContent=v;const src=flag[r.marker+'|'+d];const t=T[r.marker];const n=+src.value;
+        const watch=t&&((t.target_max!=null&&n>t.target_max)||(t.target_min!=null&&n<t.target_min));const c=src.flag==='H'?'var(--color-bad)':watch?'var(--color-warn)':'var(--color-ok)';td.style.background=LX.tint(c,src.flag==='H'?30:watch?22:12);if(src.flag==='H')td.style.fontWeight='600';});});});
+  el.append(tb);});
+
+dash.draw('systems',(el)=>{const L=LX.latest();el.replaceChildren();if(!L){el.textContent=LX.err(dash.data('latest').status);return;}
+  LX.SYS.forEach(([name,ic,ms])=>{const rows=ms.map(m=>L.find(x=>x.marker===m)).filter(Boolean);if(!rows.length)return;const worst=rows.some(r=>r.status==='High')?'High':rows.some(r=>r.status==='Watch')?'Watch':'In range';const [cls,col]=LX.ST[worst];
+    const c=LX.el('div','lx-card');c.id='sys-'+name.replace(/\W/g,'');const h=LX.el('div','row');h.append(LX.badge(ic,col),LX.el('h3',null,name),LX.el('span','lx-pill '+cls,worst==='High'?'Needs attention':worst==='Watch'?'Watch':'Good'));c.append(h);el.append(c);
+    rows.forEach(r=>{const m=LX.el('div','lx-m');const val=LX.el('span','v');val.append(LX.mark(LX.el('span',null,r.qualifier+r.value),'latest','value','marker='+encodeURIComponent(r.marker)),LX.el('span','lx-unit',r.unit));m.append(LX.el('span','n',r.marker),val);c.append(m);
+      LX.meter(m,r,Math.max(220,(c.clientWidth||300)-36));m.append(LX.el('span','lx-muted meta',(r.ref_low!=null||r.ref_high!=null?'Range '+(r.ref_low??'')+'–'+(r.ref_high??'')+' · ':'')+LX.fmt(LX.parse(r.date))+(r.draws>1?' · '+r.draws+' draws':'')));});});});
+
+LX.pick=LX.pick||'LDL';
+dash.draw('picker',(sel)=>{const L=LX.latest();sel.replaceChildren();if(!L)return;const order=LX.SYS.flatMap(s=>s[2]);const ms=L.map(r=>r.marker).sort((a,b)=>{const ia=order.indexOf(a),ib=order.indexOf(b);return (ia<0?99:ia)-(ib<0?99:ib)||(a<b?-1:1);});ms.forEach(m=>sel.append(new Option(m,m)));sel.value=LX.pick;sel.onchange=()=>{LX.pick=sel.value;dash.draw('explore');};});
+
+dash.draw('explore',(el)=>{const d=dash.data('labs');const L=LX.latest();el.replaceChildren();if(d.status!=='ok'){el.textContent=LX.err(d.status);return;}
+  const m=LX.pick;const rows=d.data.filter(r=>r.marker===m).map(r=>({...r,dt:LX.parse(r.date),v:+r.value})).sort((a,b)=>a.dt-b.dt);if(!rows.length){el.textContent='No results.';return;}
+  const W=el.clientWidth||340,H=280,mg={t:26,r:16,b:28,l:44};const last=rows[rows.length-1];const lo=last.ref_low===''||last.ref_low==null?null:+last.ref_low,hi=last.ref_high===''||last.ref_high==null?null:+last.ref_high;const lr=L&&L.find(x=>x.marker===m);const tv=lr?(lr.target_max??lr.target_min):null;
+  const vals=rows.map(r=>r.v).concat([lo,hi,tv].filter(v=>v!=null&&v>0));const a=d3.min(vals),b=d3.max(vals);const pad=(b-a)*0.2||Math.abs(b)*0.1||1;
+  const x=rows.length>1?d3.scaleUtc().domain([d3.utcMonth.offset(rows[0].dt,-3),d3.utcMonth.offset(last.dt,3)]).range([mg.l,W-mg.r]):d3.scaleUtc().domain([d3.utcMonth.offset(last.dt,-6),d3.utcMonth.offset(last.dt,6)]).range([mg.l,W-mg.r]);
+  const y=d3.scaleLinear().domain([Math.max(0,a-pad),b+pad]).nice().range([H-mg.b,mg.t]);
+  const svg=d3.select(el).append('svg').attr('width','100%').attr('height',H).attr('viewBox',`0 0 ${W} ${H}`).attr('role','img').attr('aria-label',`${m}: ${rows.length} results, latest ${last.value} ${last.unit}`);
+  svg.append('g').selectAll('line').data(y.ticks(5)).join('line').attr('x1',mg.l).attr('x2',W-mg.r).attr('y1',v=>y(v)).attr('y2',v=>y(v)).style('stroke','var(--cds-chart-grid)');
+  const yd=y.domain();const bl=lo!=null?Math.max(lo,yd[0]):yd[0],bh=hi!=null?Math.min(hi,yd[1]):yd[1];if((lo!=null||hi!=null)&&bh>bl)svg.append('rect').attr('x',mg.l).attr('width',W-mg.l-mg.r).attr('y',y(bh)).attr('height',y(bl)-y(bh)).style('fill','var(--color-ok)').style('opacity',0.12);
+  if(tv!=null){svg.append('line').attr('x1',mg.l).attr('x2',W-mg.r).attr('y1',y(tv)).attr('y2',y(tv)).style('stroke','var(--color-fg)').style('stroke-dasharray','5 4');svg.append('text').attr('x',W-mg.r).attr('y',y(tv)-5).attr('text-anchor','end').text('athlete target '+(lr.target_max!=null?'<':'>')+tv).style('fill','var(--cds-text-secondary)').style('font-size','11px');}
+  const gx=svg.append('g').attr('transform',`translate(0,${H-mg.b})`).call(d3.axisBottom(x).ticks(Math.max(2,Math.min(5,Math.floor(W/110)))).tickFormat(d3.utcFormat('%Y')).tickSizeOuter(0));const gy=svg.append('g').attr('transform',`translate(${mg.l},0)`).call(d3.axisLeft(y).ticks(5).tickSize(0));
+  [gx,gy].forEach(g=>{g.selectAll('text').style('fill','var(--cds-text-secondary)').style('font-size','11px');g.selectAll('path,line').style('stroke','var(--cds-chart-axis)');});gy.select('path').remove();
+  svg.append('path').datum(rows).attr('d',d3.area().x(r=>x(r.dt)).y0(H-mg.b).y1(r=>y(r.v))).style('fill',LX.tint(dash.colors[1],12));
+  svg.append('path').datum(rows).attr('d',d3.line().x(r=>x(r.dt)).y(r=>y(r.v))).style('fill','none').style('stroke',dash.colors[1]).style('stroke-width',2.5);
+  svg.selectAll('circle').data(rows).join('circle').attr('cx',r=>x(r.dt)).attr('cy',r=>y(r.v)).attr('r',6).style('fill',r=>r.flag==='H'?'var(--color-bad)':dash.colors[1]).style('stroke','var(--color-panel)').style('stroke-width',2);
+  const showAll=rows.length<=8&&W>360;svg.selectAll('text.lb').data(showAll?rows:[last]).join('text').attr('class','lb').attr('x',r=>x(r.dt)).attr('y',r=>y(r.v)-12).attr('text-anchor','middle').text(r=>(r.qualifier||'')+r.value).style('fill','var(--color-fg)').style('font-size','12px').style('font-weight','600');
+  const tip=LX.el('div','lx-tip');tip.hidden=true;el.append(tip);
+  svg.on('pointermove',(ev)=>{const [px]=d3.pointer(ev);const r=rows.reduce((p,q)=>Math.abs(x(q.dt)-px)<Math.abs(x(p.dt)-px)?q:p);tip.replaceChildren(LX.el('div',null,LX.fmtD(r.dt)+' · '+r.lab),LX.el('div',null,(r.qualifier||'')+r.value+' '+r.unit+(r.flag==='H'?' (high)':'')));tip.hidden=false;const sx=el.clientWidth/W;tip.style.left=Math.max(0,Math.min(el.clientWidth-tip.offsetWidth,x(r.dt)*sx-tip.offsetWidth/2))+'px';tip.style.top=Math.max(0,y(r.v)*sx-tip.offsetHeight-14)+'px';}).on('pointerleave',()=>{tip.hidden=true;});});
+</script>

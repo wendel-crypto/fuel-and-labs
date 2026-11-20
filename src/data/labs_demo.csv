@@ -1,0 +1,151 @@
+date,lab,fasting,category,marker,value,qualifier,unit,ref_low,ref_high,flag
+2023-03-04,Labcorp,yes,Lipids,Total cholesterol,192,,mg/dL,100,199,
+2023-03-04,Labcorp,yes,Lipids,LDL,141,,mg/dL,0,99,H
+2023-03-04,Labcorp,yes,Lipids,HDL,57,,mg/dL,40,,
+2023-03-04,Labcorp,yes,Lipids,Triglycerides,145,,mg/dL,0,149,
+2023-03-04,Labcorp,yes,Lipids,Non-HDL,164,,mg/dL,0,129,H
+2023-03-04,Labcorp,yes,Thyroid,TSH,4.8,,uIU/mL,0.45,4.5,H
+2023-03-04,Labcorp,yes,Thyroid,T4,9.3,,ug/dL,4.5,12,
+2023-03-04,Labcorp,yes,Thyroid,T3,132,,ng/dL,71,180,
+2023-03-04,Labcorp,yes,Other,PSA,1.5,,ng/mL,0,4,
+2023-03-04,Labcorp,yes,Metabolic,Glucose,106,,mg/dL,70,99,H
+2023-03-04,Labcorp,yes,Kidney,Creatinine,1.03,,mg/dL,0.76,1.27,
+2023-03-04,Labcorp,yes,Kidney,eGFR,79,,mL/min/1.73m2,60,,
+2023-03-04,Labcorp,yes,Kidney,BUN,17,,mg/dL,6,24,
+2023-03-04,Labcorp,yes,Calcium,Calcium,11.1,,mg/dL,8.7,10.2,H
+2023-03-04,Labcorp,yes,Calcium,Albumin,5.2,,g/dL,4.0,5.0,H
+2023-03-04,Labcorp,yes,Liver,ALT,36,,IU/L,0,44,
+2023-03-04,Labcorp,yes,Liver,AST,29,,IU/L,0,40,
+2023-03-04,Labcorp,yes,Liver,ALP,77,,IU/L,44,121,
+2023-03-04,Labcorp,yes,Blood,Hemoglobin,16.5,,g/dL,13,17.7,
+2023-03-04,Labcorp,yes,Blood,Hematocrit,41.2,,%,37.5,51,
+2023-03-04,Labcorp,yes,Blood,Platelets,165,,x10E3/uL,150,450,
+2023-03-04,Labcorp,yes,Blood,WBC,8.4,,x10E3/uL,3.4,10.8,
+2023-05-18,Labcorp,yes,Metabolic,Glucose,95,,mg/dL,70,99,
+2023-05-18,Labcorp,yes,Kidney,Creatinine,1.09,,mg/dL,0.76,1.27,
+2023-05-18,Labcorp,yes,Kidney,eGFR,87,,mL/min/1.73m2,60,,
+2023-05-18,Labcorp,yes,Kidney,BUN,20,,mg/dL,6,24,
+2023-05-18,Labcorp,yes,Calcium,Calcium,11.4,,mg/dL,8.7,10.2,H
+2023-05-18,Labcorp,yes,Calcium,Albumin,5.2,,g/dL,4.0,5.0,H
+2023-05-18,Labcorp,yes,Liver,ALT,22,,IU/L,0,44,
+2023-05-18,Labcorp,yes,Liver,AST,32,,IU/L,0,40,
+2023-05-18,Labcorp,yes,Liver,ALP,62,,IU/L,44,121,
+2023-05-18,Labcorp,yes,Blood,Hemoglobin,16.5,,g/dL,13,17.7,
+2023-05-18,Labcorp,yes,Blood,Hematocrit,47.2,,%,37.5,51,
+2023-05-18,Labcorp,yes,Blood,Platelets,160,,x10E3/uL,150,450,
+2023-05-18,Labcorp,yes,Blood,WBC,5.0,,x10E3/uL,3.4,10.8,
+2024-03-14,Labcorp,yes,Lipids,Total cholesterol,233,,mg/dL,100,199,H
+2024-03-14,Labcorp,yes,Lipids,LDL,149,,mg/dL,0,99,H
+2024-03-14,Labcorp,yes,Lipids,HDL,47,,mg/dL,40,,
+2024-03-14,Labcorp,yes,Lipids,Triglycerides,126,,mg/dL,0,149,
+2024-03-14,Labcorp,yes,Lipids,Non-HDL,212,,mg/dL,0,129,H
+2024-03-14,Labcorp,yes,Thyroid,TSH,3.04,,uIU/mL,0.45,4.5,
+2024-03-14,Labcorp,yes,Thyroid,T4,7.3,,ug/dL,4.5,12,
+2024-03-14,Labcorp,yes,Thyroid,T3,103,,ng/dL,71,180,
+2024-03-14,Labcorp,yes,Other,PSA,1.44,,ng/mL,0,4,
+2024-03-14,Labcorp,yes,Metabolic,Glucose,88,,mg/dL,70,99,
+2024-03-14,Labcorp,yes,Kidney,Creatinine,1.16,,mg/dL,0.76,1.27,
+2024-03-14,Labcorp,yes,Kidney,eGFR,76,,mL/min/1.73m2,60,,
+2024-03-14,Labcorp,yes,Kidney,BUN,24,,mg/dL,6,24,
+2024-03-14,Labcorp,yes,Calcium,Calcium,11.3,,mg/dL,8.7,10.2,H
+2024-03-14,Labcorp,yes,Calcium,Albumin,4.5,,g/dL,4.1,5.1,
+2024-03-14,Labcorp,yes,Liver,ALT,30,,IU/L,0,44,
+2024-03-14,Labcorp,yes,Liver,AST,27,,IU/L,0,40,
+2024-03-14,Labcorp,yes,Liver,ALP,73,,IU/L,44,121,
+2024-03-14,Labcorp,yes,Blood,Hemoglobin,14.9,,g/dL,13,17.7,
+2024-03-14,Labcorp,yes,Blood,Hematocrit,54.0,,%,37.5,51,H
+2024-03-14,Labcorp,yes,Blood,Platelets,161,,x10E3/uL,150,450,
+2024-03-14,Labcorp,yes,Blood,WBC,4.3,,x10E3/uL,3.4,10.8,
+2025-05-14,Labcorp,no,Lipids,Total cholesterol,216,,mg/dL,100,199,H
+2025-05-14,Labcorp,no,Lipids,LDL,151,,mg/dL,0,99,H
+2025-05-14,Labcorp,no,Lipids,HDL,48,,mg/dL,40,,
+2025-05-14,Labcorp,no,Lipids,Triglycerides,95,,mg/dL,0,149,
+2025-05-14,Labcorp,no,Lipids,Non-HDL,168,,mg/dL,0,129,H
+2025-05-14,Labcorp,no,Thyroid,TSH,2.51,,uIU/mL,0.45,4.5,
+2025-05-14,Labcorp,no,Thyroid,T4,8.4,,ug/dL,4.5,12,
+2025-05-14,Labcorp,no,Thyroid,T3,118,,ng/dL,71,180,
+2025-05-14,Labcorp,no,Other,PSA,1.4,,ng/mL,0,4,
+2025-05-14,Labcorp,no,Hormones,Testosterone (total),630,,ng/dL,264,916,
+2025-05-14,Labcorp,no,Metabolic,Glucose,83,,mg/dL,70,99,
+2025-05-14,Labcorp,no,Kidney,Creatinine,1.24,,mg/dL,0.76,1.27,
+2025-05-14,Labcorp,no,Kidney,eGFR,72,,mL/min/1.73m2,60,,
+2025-05-14,Labcorp,no,Kidney,BUN,21,,mg/dL,6,24,
+2025-05-14,Labcorp,no,Calcium,Calcium,9.1,,mg/dL,8.7,10.2,
+2025-05-14,Labcorp,no,Calcium,Albumin,4.3,,g/dL,4.1,5.1,
+2025-05-14,Labcorp,no,Liver,ALT,28,,IU/L,0,44,
+2025-05-14,Labcorp,no,Liver,AST,28,,IU/L,0,40,
+2025-05-14,Labcorp,no,Liver,ALP,68,,IU/L,44,121,
+2025-05-14,Labcorp,no,Blood,Hemoglobin,16.9,,g/dL,13,17.7,
+2025-05-14,Labcorp,no,Blood,Hematocrit,41.9,,%,37.5,51,
+2025-05-14,Labcorp,no,Blood,Platelets,166,,x10E3/uL,150,450,
+2025-05-14,Labcorp,no,Blood,WBC,5.3,,x10E3/uL,3.4,10.8,
+2026-05-29,Labcorp,yes,Lipids,Total cholesterol,237,,mg/dL,100,199,H
+2026-05-29,Labcorp,yes,Lipids,LDL,165,,mg/dL,0,99,H
+2026-05-29,Labcorp,yes,Lipids,HDL,61,,mg/dL,40,,
+2026-05-29,Labcorp,yes,Lipids,Triglycerides,98,,mg/dL,0,149,
+2026-05-29,Labcorp,yes,Lipids,Non-HDL,176,,mg/dL,0,129,H
+2026-05-29,Labcorp,yes,Thyroid,TSH,3.98,,uIU/mL,0.45,4.5,
+2026-05-29,Labcorp,yes,Thyroid,T4,7.5,,ug/dL,4.5,12,
+2026-05-29,Labcorp,yes,Thyroid,T3,87,,ng/dL,71,180,
+2026-05-29,Labcorp,yes,Other,PSA,1.5,,ng/mL,0,4,
+2026-05-29,Labcorp,yes,Hormones,Testosterone (total),506,,ng/dL,264,916,
+2026-05-29,Labcorp,yes,Vitamins,Vitamin D,53.7,,ng/mL,30,100,
+2026-05-29,Labcorp,yes,Metabolic,Glucose,90,,mg/dL,70,99,
+2026-05-29,Labcorp,yes,Kidney,Creatinine,1.16,,mg/dL,0.76,1.27,
+2026-05-29,Labcorp,yes,Kidney,eGFR,66,,mL/min/1.73m2,60,,
+2026-05-29,Labcorp,yes,Kidney,BUN,25,,mg/dL,6,24,H
+2026-05-29,Labcorp,yes,Calcium,Calcium,9.5,,mg/dL,8.7,10.2,
+2026-05-29,Labcorp,yes,Calcium,Albumin,4.3,,g/dL,4.1,5.1,
+2026-05-29,Labcorp,yes,Liver,ALT,25,,IU/L,0,44,
+2026-05-29,Labcorp,yes,Liver,AST,25,,IU/L,0,40,
+2026-05-29,Labcorp,yes,Liver,ALP,61,,IU/L,47,123,
+2026-05-29,Labcorp,yes,Blood,Hemoglobin,14.2,,g/dL,13,17.7,
+2026-05-29,Labcorp,yes,Blood,Hematocrit,44.1,,%,37.5,51,
+2026-05-29,Labcorp,yes,Blood,Platelets,166,,x10E3/uL,150,450,
+2026-05-29,Labcorp,yes,Blood,WBC,5.0,,x10E3/uL,3.4,10.8,
+2026-06-10,Labcorp,no,Lipids,Total cholesterol,265,,mg/dL,100,199,H
+2026-06-10,Labcorp,no,Lipids,LDL,215,,mg/dL,0,99,H
+2026-06-10,Labcorp,no,Lipids,HDL,65,,mg/dL,40,,
+2026-06-10,Labcorp,no,Lipids,Triglycerides,144,,mg/dL,0,149,
+2026-06-10,Labcorp,no,Lipids,Non-HDL,248,,mg/dL,0,129,H
+2026-06-10,Labcorp,no,Lipids,ApoB,120,,mg/dL,0,89,H
+2026-06-10,Labcorp,no,Lipids,Lp(a),51.6,,nmol/L,0,74.9,
+2026-06-10,Labcorp,no,Inflammation,hs-CRP,0.86,,mg/L,0,3,
+2026-06-10,Labcorp,no,Thyroid,TSH,6.52,,uIU/mL,0.45,4.5,H
+2026-06-10,Labcorp,no,Thyroid,Free T4,1.71,,ng/dL,0.82,1.77,
+2026-06-10,Labcorp,no,Thyroid,Free T3,3.4,,pg/mL,2.0,4.4,
+2026-06-10,Labcorp,no,Thyroid,TPO antibody,15,,IU/mL,0,34,
+2026-06-10,Labcorp,no,Metabolic,Glucose,82,,mg/dL,70,99,
+2026-06-10,Labcorp,no,Kidney,Creatinine,1.21,,mg/dL,0.76,1.27,
+2026-06-10,Labcorp,no,Kidney,eGFR,64,,mL/min/1.73m2,60,,
+2026-06-10,Labcorp,no,Kidney,BUN,23,,mg/dL,6,24,
+2026-06-10,Labcorp,no,Kidney,Cystatin C,1.01,,mg/L,0.6,1.0,H
+2026-06-10,Labcorp,no,Calcium,Calcium,9.8,,mg/dL,8.7,10.2,
+2026-06-10,Labcorp,no,Calcium,Albumin,4.6,,g/dL,4.1,5.1,
+2026-06-10,Labcorp,no,Calcium,PTH,39,,pg/mL,15,65,
+2026-06-10,Labcorp,no,Liver,ALT,34,,IU/L,0,44,
+2026-06-10,Labcorp,no,Liver,AST,43,,IU/L,0,40,H
+2026-06-10,Labcorp,no,Liver,ALP,71,,IU/L,47,123,
+2026-06-12,Labcorp,yes,Kidney,Urine albumin/creatinine,3.2,<,ug/mg,0,30,
+2026-06-12,Labcorp,yes,Kidney,Urine creatinine 24h,2399,,mg/24h,1000,2000,H
+2026-11-17,Rythm,yes,Lipids,Total cholesterol,274,,mg/dL,0,200,H
+2026-11-17,Rythm,yes,Lipids,LDL,174.9,,mg/dL,0,130,H
+2026-11-17,Rythm,yes,Lipids,HDL,59.9,,mg/dL,40,120,
+2026-11-17,Rythm,yes,Lipids,Triglycerides,139,,mg/dL,0,149,
+2026-11-17,Rythm,yes,Lipids,ApoB,129,,mg/dL,0,90,H
+2026-11-17,Rythm,yes,Lipids,Remnant cholesterol,27.0,,mg/dL,20,24,H
+2026-11-17,Rythm,yes,Inflammation,hs-CRP,0.5,<,mg/L,0,3,
+2026-11-17,Rythm,yes,Thyroid,TSH,3.78,,uIU/mL,0.45,4.5,
+2026-11-17,Rythm,yes,Vitamins,Vitamin D,28.5,,ng/mL,30,80,L
+2026-11-17,Rythm,yes,Vitamins,Ferritin,89.6,,ng/mL,36,609,
+2026-11-17,Rythm,yes,Hormones,Testosterone (total),735,,ng/dL,249,836,
+2026-11-17,Rythm,yes,Hormones,Cortisol,12.6,,ug/dL,4.8,19.5,
+2026-11-17,Rythm,yes,Hormones,Estradiol,21.6,,pg/mL,11.3,43.2,
+2026-11-17,Rythm,yes,Hormones,SHBG,47.7,,nmol/L,13.3,89.5,
+2026-11-17,Rythm,yes,Metabolic,Fructosamine,251,,umol/L,205,285,
+2026-11-17,Rythm,yes,Metabolic,Uric acid,5.13,,mg/dL,3.4,7,
+2026-11-17,Rythm,yes,Kidney,Creatinine,1.28,,mg/dL,0.7,1.2,H
+2026-11-17,Rythm,yes,Kidney,eGFR,71.74,,mL/min/1.73m2,60,160,
+2026-11-17,Rythm,yes,Calcium,Albumin,4.35,,g/dL,3.5,5.2,
+2026-11-17,Rythm,yes,Liver,GGT,55.4,,U/L,0,71,
+2026-11-17,Rythm,yes,Liver,ALP,61.9,,U/L,40,129,

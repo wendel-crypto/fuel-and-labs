@@ -1,0 +1,349 @@
+<meta name="dash-one-writer">
+<style>
+.fx{font-family:var(--font-anthropic-sans);color:var(--color-fg);display:flex;flex-direction:column;gap:40px;--r:22px}
+.fx *{font-family:inherit}
+.fx p{margin:0;line-height:1.5}
+.fx h2{font-size:22px;font-weight:650;margin:0;letter-spacing:-.01em}
+.fx h3{margin:0}
+.fx-eye{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+.fx-muted{color:var(--color-fg-muted);font-size:13px}
+.fx-sec{display:flex;flex-direction:column;gap:16px}
+.fx-head{display:flex;align-items:center;gap:12px}
+.fx-head .sub{margin-left:auto;font-size:12px;color:var(--color-fg-muted)}
+.fx-ib{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;flex:none}
+/* hero */
+.fx-hero{position:relative;border-radius:30px;overflow:hidden;color:#fff;background:#0b1f3a}
+.fx-hero .bg{position:absolute;inset:0;background-size:cover;background-position:center 40%;opacity:.42}
+.fx-hero .sh{position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,31,58,.96) 0%,rgba(23,70,160,.82) 55%,rgba(14,165,183,.55) 100%)}
+.fx-hin{position:relative;padding:22px;display:flex;flex-direction:column;gap:20px}
+.fx-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.fx-top .fx-eye{opacity:.8;margin-right:auto}
+.fx-btn{font-size:12px;font-weight:600;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);color:#fff;border-radius:999px;padding:7px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:4px}
+.fx-btn:hover{background:rgba(255,255,255,.18)}
+.fx-main{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));align-items:stretch;min-height:190px}
+.fx-date{display:flex;gap:18px;align-items:center}
+.fx-num{font-size:clamp(84px,15vw,128px);font-weight:700;line-height:.85;letter-spacing:-.05em;font-variant-numeric:tabular-nums}
+.fx-dw{display:flex;flex-direction:column;gap:4px}
+.fx-dw .dow{font-size:22px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.fx-dw .mon{font-size:15px;opacity:.85}
+.fx-dw .tag{display:inline-flex;align-items:center;gap:6px;margin-top:6px;font-size:12px;font-weight:650;border-radius:999px;padding:5px 11px;background:rgba(255,255,255,.16);width:max-content}
+.fx-sess{margin-top:14px;display:flex;flex-direction:column;gap:6px}
+.fx-sess h3{font-size:24px;font-weight:700;line-height:1.15;letter-spacing:-.01em}
+.fx-sess p{font-size:13px;opacity:.82;max-width:52ch}
+.fx-glass{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:var(--r);padding:16px;backdrop-filter:blur(6px)}
+.fx-wx{display:flex;flex-direction:column;gap:10px;align-self:start}
+.fx-wx .row{display:flex;align-items:center;gap:14px}
+.fx-wx .t{font-size:46px;font-weight:700;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.fx-wx .c{font-size:15px;font-weight:600}
+.fx-wx .mini{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.fx-wx .mini div{background:rgba(255,255,255,.08);border-radius:12px;padding:8px 10px;font-size:11px;opacity:.95}
+.fx-wx .mini b{display:block;font-size:16px;font-variant-numeric:tabular-nums}
+.fx-wx .tip{font-size:12px;opacity:.9;display:flex;gap:8px;align-items:flex-start}
+.fx-strip{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+.fx-d{border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.07);color:#fff;border-radius:16px;padding:10px 2px;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;min-width:0}
+.fx-d small{font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.75;font-weight:600}
+.fx-d b{font-size:20px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.fx-d span{font-size:11px;font-weight:600;font-variant-numeric:tabular-nums}
+.fx-d.on{background:#fff;color:#0b1f3a;border-color:#fff}
+.fx-d.now{box-shadow:inset 0 -3px 0 #2dd4bf}
+.fx-mac{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+.fx-m{border-radius:18px;padding:12px 14px;background:rgba(255,255,255,.1);display:flex;flex-direction:column;gap:2px}
+.fx-m .k{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;opacity:.8;display:flex;align-items:center;gap:6px}
+.fx-m .k i{width:8px;height:8px;border-radius:50%;display:inline-block}
+.fx-m b{font-size:28px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.fx-m small{font-size:12px;opacity:.75}
+.fx-note{display:flex;gap:10px;align-items:center;background:rgba(251,191,36,.18);border:1px solid rgba(251,191,36,.45);border-radius:14px;padding:10px 12px;font-size:13px}
+/* meals */
+.fx-tl{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));min-height:220px}
+.fx-meal{background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.fx-ph{position:relative;aspect-ratio:16/10;background:var(--color-border-line);overflow:hidden}
+.fx-ph img{width:100%;height:100%;object-fit:cover;display:block}
+.fx-ph .cr{position:absolute;right:8px;bottom:6px;font-size:9px;color:#fff;background:rgba(0,0,0,.45);padding:2px 6px;border-radius:6px}
+.fx-ph .tm{position:absolute;left:10px;top:10px;font-size:13px;font-weight:700;background:rgba(255,255,255,.94);color:#0b1f3a;border-radius:999px;padding:4px 10px;font-variant-numeric:tabular-nums}
+.fx-noph{display:flex;align-items:center;gap:12px;padding:14px 14px 0}
+.fx-noph time{font-size:13px;font-weight:700;font-variant-numeric:tabular-nums}
+.fx-mb{padding:12px 14px 14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.fx-slot{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:650}
+.fx-what{font-size:14px;line-height:1.45}
+.fx-chips{display:flex;gap:6px;flex-wrap:wrap}
+.fx-chip{font-size:11px;border-radius:999px;padding:3px 9px;font-weight:650;font-variant-numeric:tabular-nums}
+.fx-meal details{margin-top:auto;border-top:1px solid var(--color-border-line);padding-top:8px}
+.fx-meal summary{cursor:pointer;font-size:12px;font-weight:650;list-style:none;display:flex;align-items:center;gap:6px}
+.fx-meal summary::-webkit-details-marker{display:none}
+.fx-meal ol{margin:8px 0 0;padding-left:18px;font-size:13px;line-height:1.5;display:flex;flex-direction:column;gap:3px}
+.fx-sum{display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:13px;background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:16px;padding:12px 14px}
+/* build */
+.fx-build{background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:var(--r);padding:8px;display:flex;flex-direction:column;gap:2px;min-height:300px}
+.fx-wk{display:grid;grid-template-columns:46px 108px 1fr 92px 58px;gap:10px;align-items:center;padding:7px 10px;border-radius:12px;cursor:pointer;font-size:13px;border:1px solid transparent}
+.fx-wk:hover{background:var(--color-border-line)}
+.fx-wk.sel{border-color:var(--color-fg)}
+.fx-wk .w{font-weight:700;font-variant-numeric:tabular-nums}
+.fx-wk .dt{color:var(--color-fg-muted);font-size:12px;font-variant-numeric:tabular-nums}
+.fx-wk .bar{display:flex;align-items:center;gap:8px;min-width:0}
+.fx-wk .bar i{height:12px;border-radius:6px;display:block}
+.fx-wk .bar span{font-size:12px;font-weight:650;font-variant-numeric:tabular-nums;white-space:nowrap}
+.fx-wk .cb{display:flex;align-items:center;gap:6px;font-variant-numeric:tabular-nums;font-weight:650}
+.fx-wk .cb i{width:10px;height:10px;border-radius:3px;display:inline-block}
+.fx-wk .lr{font-size:12px;text-align:right;font-variant-numeric:tabular-nums;color:var(--color-fg-muted)}
+.fx-wk.hd{cursor:default;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-fg-muted);font-weight:650}
+.fx-wk.hd:hover{background:none}
+.fx-ph-row{padding:12px 10px 4px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;display:flex;align-items:center;gap:8px}
+.fx-ph-row i{width:10px;height:10px;border-radius:50%}
+.fx-key{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--color-fg-muted)}
+.fx-key span{display:inline-flex;gap:6px;align-items:center}
+.fx-key i{width:12px;height:12px;border-radius:3px;display:inline-block}
+@media(max-width:560px){.fx-wk{grid-template-columns:34px 1fr 74px 44px}.fx-wk .dt{display:none}}
+/* juices */
+.fx-juices{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));min-height:200px}
+.fx-j{border-radius:var(--r);overflow:hidden;position:relative;min-height:270px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;background:#0b1f3a}
+.fx-j img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fx-j .g{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,31,58,0) 25%,rgba(11,31,58,.92) 78%)}
+.fx-j .b{position:relative;padding:14px;display:flex;flex-direction:column;gap:5px}
+.fx-j h3{font-size:17px;font-weight:700}
+.fx-j .when{font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:650;opacity:.85}
+.fx-j p{font-size:12px;opacity:.92}
+.fx-j .cg{position:absolute;top:10px;right:10px;font-size:12px;font-weight:700;background:rgba(255,255,255,.94);color:#0b1f3a;border-radius:999px;padding:3px 9px}
+.fx-j .cr{font-size:9px;opacity:.7}
+/* shop */
+.fx-ic{position:relative;border-radius:var(--r);overflow:hidden;color:#fff;background:#0b3d2e}
+.fx-ic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.fx-ic .g{position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,40,30,.95) 0%,rgba(6,40,30,.75) 55%,rgba(6,40,30,.2) 100%)}
+.fx-ic .b{position:relative;padding:20px;display:flex;flex-direction:column;gap:12px;max-width:560px}
+.fx-ic h3{font-size:22px;font-weight:700}
+.fx-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
+.fx-steps div{background:rgba(255,255,255,.12);border-radius:14px;padding:10px;font-size:12px}
+.fx-steps b{display:block;font-size:13px;margin-bottom:2px}
+.fx-aisles{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));min-height:200px}
+.fx-aisle{background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:var(--r);padding:14px;display:flex;flex-direction:column;gap:8px}
+.fx-aisle h3{font-size:15px;font-weight:700;display:flex;align-items:center;gap:10px}
+.fx-aisle h3 small{margin-left:auto;font-size:11px;color:var(--color-fg-muted);font-weight:600}
+.fx-aisle ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px}
+.fx-aisle li{display:flex;justify-content:space-between;gap:8px;font-size:13px;border-bottom:1px dashed var(--color-border-line);padding-bottom:5px}
+.fx-aisle li:last-child{border-bottom:0}
+.fx-aisle li b{font-variant-numeric:tabular-nums;font-size:12px;border-radius:999px;padding:1px 8px;white-space:nowrap}
+/* swaps & rules */
+.fx-tablewrap{overflow-x:auto;border:1px solid var(--color-border-line);border-radius:var(--r);background:var(--color-panel)}
+.fx table{border-collapse:collapse;width:100%;font-size:13px}
+.fx th{text-align:left;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-fg-muted);font-weight:650;padding:12px 14px;border-bottom:1px solid var(--color-border-line)}
+.fx td{padding:12px 14px;border-bottom:1px solid var(--color-border-line);vertical-align:top}
+.fx tr:last-child td{border-bottom:0}
+.fx td .ic{display:inline-flex;align-items:center;gap:8px}
+.fx-rules{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.fx-rule{background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:8px}
+.fx-rule h3{font-size:15px;font-weight:700}
+.fx-rule ul{margin:0;padding-left:1.1em;font-size:13px;line-height:1.55}
+.fx-foot{font-size:11px;color:var(--color-fg-muted)}
+</style>
+
+<div class="fx">
+
+<section class="fx-hero" id="hero">
+  <div class="bg" style="background-image:url(/_blob/9b99985f8741605a51ccaa207603ab87)"></div>
+  <div class="sh"></div>
+  <div class="fx-hin">
+    <div class="fx-top">
+      <span class="fx-eye">Performance Nutrition Planner · Miami</span>
+      <button class="fx-btn" id="b-prev" type="button" aria-label="Previous week">‹ Week</button>
+      <button class="fx-btn" id="b-today" type="button">Today</button>
+      <button class="fx-btn" id="b-next" type="button" aria-label="Next week">Week ›</button>
+    </div>
+    <div class="fx-main">
+      <div data-draw="hero_date" data-source="day_targets">—</div>
+      <div class="fx-glass fx-wx" data-draw="hero_wx" data-source="weather">—</div>
+    </div>
+    <div class="fx-strip" data-draw="strip" data-source="day_targets"></div>
+    <div class="fx-mac" data-draw="macros" data-source="day_targets"></div>
+    <div data-draw="note" data-source="day_targets"></div>
+    <p class="fx-eye" style="opacity:.7;font-size:10px">Targets use your Garmin weight · <span data-draw="v" data-source="body" data-field="weight_kg" data-row="0">—</span> kg · macros are estimates · weather: Miami forecast, refreshed daily</p>
+  </div>
+</section>
+
+<section class="fx-sec" id="meals">
+  <div class="fx-head"><span data-draw="icon" data-ic="plate"></span><h2>Today's menu &amp; how to make it</h2><span class="sub" data-draw="menu_sub" data-source="day_targets"></span></div>
+  <div class="fx-tl" data-draw="timeline" data-source="meal_templates"></div>
+  <div data-draw="menu_total" data-source="template_totals day_targets"></div>
+</section>
+
+<section class="fx-sec" id="build">
+  <div class="fx-head"><span data-draw="icon" data-ic="chart"></span><h2>The build, week by week</h2><span class="sub">Tap a week to plan it</span></div>
+  <div class="fx-key" data-draw="build_key"></div>
+  <div class="fx-build" data-draw="build" data-source="weeks"></div>
+</section>
+
+<section class="fx-sec" id="juices">
+  <div class="fx-head"><span data-draw="icon" data-ic="cup"></span><h2>Juice bar</h2></div>
+  <div class="fx-juices" data-draw="juices" data-source="juices"></div>
+</section>
+
+<section class="fx-sec" id="shop">
+  <div class="fx-head"><span data-draw="icon" data-ic="cart"></span><h2>Weekly groceries · Instacart</h2></div>
+  <div class="fx-ic">
+    <img src="/_blob/f2add6853def95c1d7d05f46f6207e97" alt="">
+    <div class="g"></div>
+    <div class="b">
+      <span class="fx-eye" style="opacity:.85">Every Friday · delivery Saturday morning</span>
+      <h3>Your cart fills itself for the week ahead</h3>
+      <div class="fx-steps">
+        <div><b>Fri 7:40 am</b>Claude reads next week's sessions and fills your Instacart cart</div>
+        <div><b>Push to phone</b>You get the cart link to review and swap items</div>
+        <div><b>You check out</b>Pick a Saturday 8–10 am slot · nothing buys without you</div>
+      </div>
+    </div>
+  </div>
+  <div class="fx-aisles" data-draw="shop" data-source="shopping"></div>
+  <p class="fx-foot">Quantities cover one standard training week. Items marked “as needed” are added only in the weeks that call for them (peak weeks, race week).</p>
+</section>
+
+<section class="fx-sec" id="swaps">
+  <div class="fx-head"><span data-draw="icon" data-ic="swap"></span><h2>Smart swaps for your cholesterol</h2></div>
+  <div class="fx-tablewrap">
+    <table data-source="swaps" data-row-key="instead_of" id="tbl-swaps">
+      <thead><tr><th>Instead of</th><th>Choose</th><th>Why</th></tr></thead>
+      <tbody data-draw="swaps"></tbody>
+    </table>
+  </div>
+</section>
+
+<section class="fx-sec" id="rules">
+  <div class="fx-head"><span data-draw="icon" data-ic="check"></span><h2>Rules that make it work</h2></div>
+  <div class="fx-rules">
+    <div class="fx-rule" id="r-morning"><span data-draw="icon" data-ic="sun" data-bg="3"></span><h3>Morning sessions</h3><ul><li>Under 75 min easy: water + LMNT only</li><li>5:30 track: 30–50 g fast carbs at 4:50</li><li>Shake within 30 min, breakfast 2 h later</li></ul></div>
+    <div class="fx-rule" id="r-long"><span data-draw="icon" data-ic="route" data-bg="0"></span><h3>Long runs &amp; race</h3><ul><li>Saturday dinner low fiber, no psyllium</li><li>From minute 30: 60–90 g carbs/hour</li><li>Carb load Apr 22–24: 10 g/kg, salty</li></ul></div>
+    <div class="fx-rule" id="r-heart"><span data-draw="icon" data-ic="heart" data-bg="5"></span><h3>Cholesterol-friendly</h3><ul><li>Psyllium 5 g with dinner</li><li>Fish 2–3×/week, olive oil over butter</li><li>Nuts 30 g a day</li></ul></div>
+    <div class="fx-rule" id="r-heat"><span data-draw="icon" data-ic="drop" data-bg="1"></span><h3>Miami heat</h3><ul><li>Morning low ≥ 72 °F: +500 ml and 1 extra LMNT</li><li>Weigh before/after long runs; drink 1.2× the loss</li><li>Salt the recovery juice</li></ul></div>
+  </div>
+</section>
+
+</div>
+
+<script>
+dash.loader('g_weight',{description:'One row per weigh-in from the measurements list.',fn:({answer})=>{const a=typeof answer==='string'?JSON.parse(answer):answer;if(a&&a.error)throw new Error(a.error.message||a.error);return (a.measurements||[]).map(m=>({date:m.date,weight_kg:m.weight_kg}));}});
+dash.calc('body',{inputs:['g_weight'],title:'Body weight used for targets',description:'Median of your last 10 Garmin weigh-ins.',fn:(weights)=>{const w=weights.filter(r=>r.weight_kg>0).sort((a,b)=>a.date<b.date?1:-1).slice(0,10).map(r=>r.weight_kg).sort((a,b)=>a-b);return [{weight_kg:w.length?Math.round(w[Math.floor(w.length/2)]*10)/10:null}];}});
+dash.calc('day_targets',{inputs:['plan','rules','body'],title:'Daily fuel targets',description:'Carbs, protein and fat per day: grams per kg for the session type times your weight, plus a top-up the day before long runs and races and a carb load the 3 days before race day.',fn:(plan,rules,body)=>{
+  const kg=body&&body[0]&&body[0].weight_kg;if(!kg)return [];
+  const R={};rules.forEach(r=>R[r.type]=r);const days=plan.slice().sort((a,b)=>a.date<b.date?-1:1);const race='2027-04-25';
+  return days.map((d,i)=>{const r=R[d.type]||R.easy;const km=+d.km;let c=+r.carbs_gkg,note='';
+    if(d.type==='long'&&km>=24){c+=1;note='Long run over 24 km: extra carbs during and after.';}
+    if(d.type==='easy'&&km>10)c+=0.5;
+    const n=days[i+1];
+    if(n&&n.type==='long'&&+n.km>=24){c+=1.5;note='Top-up day: tomorrow is a '+n.km+' km long run.';}
+    if(n&&n.type==='race'){c+=2;note='Top-up day: race tomorrow.';}
+    const dr=(Date.parse(race)-Date.parse(d.date))/864e5;if(dr>=1&&dr<=3){c=10;note='Carb load: 10 g/kg, salty, low fiber, nothing new.';}
+    const p=+r.protein_gkg,f=+r.fat_gkg;const cg=Math.round(c*kg),pg=Math.round(p*kg),fg=Math.round(f*kg);
+    return {date:d.date,week:+d.week,phase:d.phase,dow:d.dow,type:d.type,label:r.label,title:d.title,km:km,desc:d.desc,template:r.template,carbs_gkg:Math.round(c*10)/10,protein_gkg:p,fat_gkg:f,carbs_g:cg,protein_g:pg,fat_g:fg,kcal:Math.round((cg+pg)*4+fg*9),note:note};});}});
+dash.calc('weeks',{inputs:['day_targets'],title:'Weekly summary',description:'Per training week: first and last date, phase, total km, longest run, and average daily carbs in grams and g/kg.',fn:(days)=>{const W={};days.forEach(d=>{const w=W[d.week]=W[d.week]||{week:d.week,start:d.date,end:d.date,phase:d.phase,km:0,long_km:0,carbs_sum:0,gkg_sum:0,n:0};if(d.date<w.start)w.start=d.date;if(d.date>w.end)w.end=d.date;w.km+=d.km;if((d.type==='long'||d.type==='race')&&d.km>w.long_km)w.long_km=d.km;w.carbs_sum+=d.carbs_g;w.gkg_sum+=d.carbs_gkg;w.n++;});return Object.values(W).sort((a,b)=>a.week-b.week).map(w=>({week:w.week,start:w.start,end:w.end,phase:w.phase,km:Math.round(w.km*10)/10,long_km:w.long_km,avg_carbs_g:Math.round(w.carbs_sum/w.n),avg_carbs_gkg:Math.round(w.gkg_sum/w.n*10)/10}));}});
+dash.calc('template_totals',{inputs:['meal_templates'],title:'Meal plan totals',description:'Carbs, protein and fat summed for each day template.',fn:(meals)=>{const t={};meals.forEach(m=>{const k=m.template;t[k]=t[k]||{template:k,carbs_g:0,protein_g:0,fat_g:0};t[k].carbs_g+= +m.carbs_g;t[k].protein_g+= +m.protein_g;t[k].fat_g+= +m.fat_g;});return Object.values(t).map(x=>({...x,kcal:(x.carbs_g+x.protein_g)*4+x.fat_g*9}));}});
+</script>
+
+<script>
+window.IC={
+ calendar:'M4 6h16v14H4zM4 10h16M8 3v4M16 3v4',clock:'M12 7v5l3 2M12 3a9 9 0 1 0 .01 0',chart:'M4 20V10M10 20V4M16 20v-7M22 20H2',cup:'M6 3h12l-2 18H8zM7 8h10',swap:'M7 4L3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7',check:'M5 12l5 5 9-10',
+ sun:'M12 8a4 4 0 1 0 .01 0M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4',moon:'M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z',
+ route:'M6 19a2 2 0 1 0 .01 0M18 3a2 2 0 1 0 .01 0M8 19h7.5a3.5 3.5 0 0 0 0-7h-7a3.5 3.5 0 0 1 0-7H16',heart:'M12 20s-7.5-4.6-9.2-9.3A4.9 4.9 0 0 1 12 6.5a4.9 4.9 0 0 1 9.2 4.2C19.5 15.4 12 20 12 20z',
+ zap:'M13 2L4 14h7l-1 8 9-12h-7z',run:'M14 4a2 2 0 1 0 .01 0M6 21l3-6 3 2 1 5M10 15l1.5-6L15 12l3-1M7 11l3-3h3',flag:'M5 21V3M5 4h12l-2.5 4L17 12H5',watch:'M12 9v4l2 2M9 2h6M12 5a8 8 0 1 0 .01 0',
+ bowl:'M3 11h18a9 9 0 0 1-18 0zM9 7c0-1.5 1.5-1.5 1.5-3M14 7c0-1.5 1.5-1.5 1.5-3',plate:'M12 4a8 8 0 1 0 .01 0M12 8a4 4 0 1 0 .01 0',apple:'M12 8c-3-2-8-.5-7 5.5S9 21 12 19.5c3 1.5 6-1 7-6S15 6 12 8zM12 8c0-2 1-3.5 3-4',
+ shake:'M8 2h8v3l2 3v14H6V8l2-3zM6 12h12',drop:'M12 3s6 7 6 11.5a6 6 0 0 1-12 0C6 10 12 3 12 3z',
+ cloud:'M7 18h10a4 4 0 0 0 0-8 6 6 0 0 0-11.5 1.5A3.5 3.5 0 0 0 7 18z',rain:'M7 14h10a4 4 0 0 0 0-8 6 6 0 0 0-11.5 1.5A3.5 3.5 0 0 0 7 14zM8 17l-1 3M12 17l-1 3M16 17l-1 3',
+ cart:'M3 4h2l2.5 11h10L20 7H6.5M9 20a1 1 0 1 0 .01 0M17 20a1 1 0 1 0 .01 0',leaf:'M5 19c0-9 6-14 15-14 0 9-5 15-14 15M5 19l7-7',fish:'M3 12c3-5 9-6 14-2l4-3v10l-4-3c-5 4-11 3-14-2zM15 11h.01',milk:'M8 3h8v3l2 3v12H6V9l2-3zM6 13h12',grain:'M12 21V8M12 8c-2-1-3-3-3-5 2 0 3 2 3 5zM12 8c2-1 3-3 3-5-2 0-3 2-3 5zM12 13c-2-1-4-2-4-5 2 0 4 2 4 5zM12 13c2-1 4-2 4-5-2 0-4 2-4 5z',jar:'M7 3h10v3H7zM6 6h12v15H6zM9 11h6',snow:'M12 2v20M4 7l16 10M20 7L4 17',
+ x:'M6 6l12 12M18 6L6 18',thermo:'M14 14.8V4a2 2 0 0 0-4 0v10.8a4 4 0 1 0 4 0z',chevron:'M9 6l6 6-6 6'};
+window.NX=window.NX||{};
+NX.svg=(name,size,color)=>{const ns='http://www.w3.org/2000/svg';const s=document.createElementNS(ns,'svg');s.setAttribute('viewBox','0 0 24 24');s.setAttribute('width',size);s.setAttribute('height',size);s.setAttribute('aria-hidden','true');const p=document.createElementNS(ns,'path');p.setAttribute('d',IC[name]||IC.check);p.setAttribute('fill','none');p.setAttribute('stroke',color||'currentColor');p.setAttribute('stroke-width','1.8');p.setAttribute('stroke-linecap','round');p.setAttribute('stroke-linejoin','round');s.append(p);return s;};
+NX.TYPE={rest:['moon',6,'Rest day'],easy:['run',1,'Easy run'],recovery:['run',1,'Recovery'],track:['watch',4,'Track session'],long:['route',0,'Long run'],race:['flag',5,'Race day']};
+NX.tcol=t=>dash.colors[(NX.TYPE[t]||NX.TYPE.easy)[1]];
+NX.MAC=[['carbs','Carbs',3],['protein','Protein',1],['fat','Fat',4]];
+NX.PHASE=p=>/base/i.test(p)?1:/aerobic|build/i.test(p)?0:/specific|peak/i.test(p)?4:/taper|race/i.test(p)?5:6;
+NX.slotIcon=s=>/wake/i.test(s)?['sun',3]:/pre-/i.test(s)?['zap',3]:/run|track|race/i.test(s)?['run',0]:/shake|recovery/i.test(s)?['shake',1]:/juice/i.test(s)?['cup',1]:/breakfast|brunch/i.test(s)?['bowl',3]:/snack/i.test(s)?['apple',1]:/evening/i.test(s)?['moon',6]:['plate',0];
+NX.parse=d3.utcParse('%Y-%m-%d');NX.fd=d3.utcFormat('%b %-d');
+NX.today=()=>{const n=new Date();return new Date(Date.UTC(n.getFullYear(),n.getMonth(),n.getDate())).toISOString().slice(0,10);};
+NX.rows=()=>{const d=dash.data('day_targets');return d.status==='ok'&&Array.isArray(d.data)?d.data:null;};
+NX.sel=()=>{const rows=NX.rows();if(!rows||!rows.length)return null;let s=NX.date||NX.today();if(s<rows[0].date)s=rows[0].date;if(s>rows[rows.length-1].date)s=rows[rows.length-1].date;NX.date=s;return rows.find(r=>r.date===s)||rows.find(r=>r.date>s)||rows[0];};
+NX.el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;};
+NX.mark=(e,s,f,w)=>{e.setAttribute('data-source',s);e.setAttribute('data-field',f);if(w)e.setAttribute('data-where',w);return e;};
+NX.tint=(c,p)=>`color-mix(in srgb, ${c} ${p}%, transparent)`;
+NX.redraw=()=>['hero_date','hero_wx','strip','macros','note','menu_sub','timeline','menu_total','build'].forEach(n=>dash.draw(n));
+NX.go=d=>{NX.date=d;NX.redraw();};
+NX.shift=n=>{const r=NX.sel();if(!r)return;const t=new Date(Date.parse(r.date)+n*864e5).toISOString().slice(0,10);NX.go(t);};
+NX.status=()=>{const s=dash.data('day_targets').status;return s==='error'?'The plan failed to load.':(s==='connect'||s==='declined')?'Connect Garmin to set your targets from your weight.':'—';};
+document.getElementById('b-prev').addEventListener('click',()=>NX.shift(-7));
+document.getElementById('b-next').addEventListener('click',()=>NX.shift(7));
+document.getElementById('b-today').addEventListener('click',()=>NX.go(NX.today()));
+
+dash.draw('icon',(el)=>{el.replaceChildren();const bg=el.getAttribute('data-bg');const col=bg!=null?dash.colors[+bg]:dash.colors[0];el.className='fx-ib';el.style.background=NX.tint(col,14);el.append(NX.svg(el.getAttribute('data-ic'),21,col));});
+dash.draw('v',(el)=>{const d=dash.data(el.getAttribute('data-source'));const r=d.status==='ok'&&d.data&&d.data[+el.getAttribute('data-row')||0];const v=r&&r[el.getAttribute('data-field')];el.textContent=v==null?'—':String(v);});
+
+dash.draw('hero_date',(el)=>{const r=NX.sel();el.replaceChildren();if(!r){el.textContent=NX.status();return;}
+  const dt=NX.parse(r.date);const [ic,,lab]=NX.TYPE[r.type]||NX.TYPE.easy;const w='date='+r.date;
+  const top=NX.el('div','fx-date');const num=NX.mark(NX.el('div','fx-num',d3.utcFormat('%-d')(dt)),'day_targets','date',w);
+  const dw=NX.el('div','fx-dw');dw.append(NX.el('span','dow',d3.utcFormat('%A')(dt)),NX.el('span','mon',d3.utcFormat('%B %Y')(dt)));
+  const tag=NX.el('span','tag');tag.append(NX.svg(ic,14,'#fff'),document.createTextNode(lab+(r.km>0?' · '+r.km+' km':'')));NX.mark(tag,'day_targets','km',w);dw.append(tag);
+  top.append(num,dw);
+  const s=NX.el('div','fx-sess');s.append(NX.mark(NX.el('h3',null,r.title),'day_targets','title',w),NX.mark(NX.el('p',null,r.desc),'day_targets','desc',w));
+  const sub=NX.el('p');sub.style.cssText='font-size:12px;opacity:.7';sub.textContent='Week '+r.week+' · '+r.phase+(r.date===NX.today()?' · today':'');s.append(sub);
+  el.append(top,s);});
+
+dash.draw('hero_wx',(el)=>{const r=NX.sel();const d=dash.data('weather');el.replaceChildren();
+  const h=NX.el('span','fx-eye');h.style.opacity='.8';h.textContent='Miami weather';el.append(h);
+  if(d.status!=='ok'){el.append(NX.el('p',null,d.status==='error'?'Weather failed to load.':'—'));return;}
+  const w=r&&d.data.find(x=>x.date===r.date);
+  if(!w){const p=NX.el('p',null,'Forecast appears up to 7 days ahead. Last update: '+((d.data[0]||{}).updated||'—')+'.');p.style.fontSize='13px';el.append(p);return;}
+  const wh='date='+w.date;const rp=+w.rain_pct;const ic=rp>=60?'rain':rp>=35?'cloud':/cloud/i.test(w.condition)?'cloud':'sun';
+  const row=NX.el('div','row');row.append(NX.svg(ic,46,'#fff'));const tb=NX.el('div');tb.append(NX.mark(NX.el('div','t',w.high_f+'°'),'weather','high_f',wh),NX.mark(NX.el('div','c',w.condition),'weather','condition',wh));row.append(tb);el.append(row);
+  const mini=NX.el('div','mini');[['Low · 5:30 am','low_f','°F'],['Rain','rain_pct','%'],['High','high_f','°F']].forEach(([k,f,u])=>{const c=NX.el('div');c.append(NX.mark(NX.el('b',null,w[f]+u),'weather',f,wh),document.createTextNode(k));mini.append(c);});el.append(mini);
+  const tip=NX.el('div','tip');let t=+w.low_f>=72?'Humid start: drink 500 ml more and add 1 extra LMNT.':+w.low_f<=64?'Cool morning: good day to push the pace — normal fluids.':'Normal fluids: 500 ml + 1 LMNT before you go.';if(rp>=60)t+=' Rain likely — bag the gels in a zip pouch.';
+  tip.append(NX.svg('drop',16,'#2dd4bf'),NX.el('span',null,t));el.append(tip);
+  const u=NX.el('span',null,'Updated '+w.updated);u.style.cssText='font-size:10px;opacity:.6';el.append(u);});
+
+dash.draw('strip',(el)=>{const rows=NX.rows();const r=NX.sel();el.replaceChildren();if(!rows||!r)return;
+  const wk=rows.filter(x=>x.week===r.week);const td=NX.today();
+  wk.forEach(x=>{const b=NX.el('button','fx-d'+(x.date===r.date?' on':'')+(x.date===td?' now':''));b.type='button';b.setAttribute('aria-pressed',x.date===r.date);b.setAttribute('data-key',x.date);
+    const col=x.date===r.date?NX.tcol(x.type):'#fff';const [ic]=NX.TYPE[x.type]||NX.TYPE.easy;
+    b.append(NX.el('small',null,x.dow),NX.mark(NX.el('b',null,d3.utcFormat('%-d')(NX.parse(x.date))),'day_targets','date','date='+x.date),NX.svg(ic,17,col),NX.mark(NX.el('span',null,x.km>0?x.km+' km':'Rest'),'day_targets','km','date='+x.date));
+    b.addEventListener('click',()=>NX.go(x.date));el.append(b);});});
+
+dash.draw('macros',(el)=>{const r=NX.sel();el.replaceChildren();if(!r)return;const w='date='+r.date;
+  NX.MAC.forEach(([k,lab,ci])=>{const m=NX.el('div','fx-m');const kk=NX.el('span','k');const dot=NX.el('i');dot.style.background=dash.colors[ci];kk.append(dot,document.createTextNode(lab));
+    m.append(kk,NX.mark(NX.el('b',null,r[k+'_g']+' g'),'day_targets',k+'_g',w),NX.mark(NX.el('small',null,r[k+'_gkg']+' g per kg'),'day_targets',k+'_gkg',w));el.append(m);});
+  const m=NX.el('div','fx-m');const kk=NX.el('span','k');kk.append(NX.svg('zap',12,'#fff'),document.createTextNode('Energy'));m.append(kk,NX.mark(NX.el('b',null,r.kcal.toLocaleString()),'day_targets','kcal',w),NX.el('small',null,'kcal target'));el.append(m);});
+
+dash.draw('note',(el)=>{const r=NX.sel();el.replaceChildren();if(r&&r.note){const n=NX.el('div','fx-note');n.append(NX.svg('zap',18,'#fbbf24'),NX.mark(NX.el('span',null,r.note),'day_targets','note','date='+r.date));el.append(n);}});
+
+dash.draw('menu_sub',(el)=>{const r=NX.sel();el.textContent=r?(NX.TYPE[r.type]||NX.TYPE.easy)[2]+' menu · '+d3.utcFormat('%a %b %-d')(NX.parse(r.date)):'';});
+
+dash.draw('timeline',(el)=>{const r=NX.sel();const m=dash.data('meal_templates');el.replaceChildren();if(!r||m.status!=='ok'){el.textContent=m.status==='error'?'Meal plan failed to load.':(r?'—':NX.status());return;}
+  m.data.filter(x=>x.template===r.template).sort((a,b)=>+a.order-+b.order).forEach(x=>{const [ic,ci]=NX.slotIcon(x.slot);const col=dash.colors[ci];const w='template='+x.template+' order='+x.order;
+    const c=NX.el('article','fx-meal');c.setAttribute('data-key',x.template+'-'+x.order);
+    if(x.image){const ph=NX.el('div','fx-ph');const im=NX.el('img');im.src=x.image;im.alt=x.item;im.loading='lazy';ph.append(im,NX.mark(NX.el('span','tm',x.time),'meal_templates','time',w));if(x.image_credit)ph.append(NX.el('span','cr',x.image_credit));c.append(ph);}
+    else{const h=NX.el('div','fx-noph');const b=NX.el('span','fx-ib');b.style.background=NX.tint(col,16);b.append(NX.svg(ic,21,col));h.append(b,NX.mark(NX.el('time',null,x.time),'meal_templates','time',w));c.append(h);}
+    const body=NX.el('div','fx-mb');const sl=NX.el('span','fx-slot',x.slot);sl.style.color=col;body.append(sl,NX.mark(NX.el('p','fx-what',x.item),'meal_templates','item',w));
+    const chips=NX.el('div','fx-chips');NX.MAC.forEach(([k,lab,cj])=>{const v=+x[k+'_g'];if(!v)return;const ch=NX.el('span','fx-chip',v+' g '+lab.toLowerCase());ch.style.background=NX.tint(dash.colors[cj],16);NX.mark(ch,'meal_templates',k+'_g',w);chips.append(ch);});if(chips.childNodes.length)body.append(chips);
+    if(x.prep){const dd=NX.el('details');const s=NX.el('summary');s.append(NX.svg('clock',14,dash.colors[0]),document.createTextNode('How to prepare'+(+x.prep_min?' · '+x.prep_min+' min':'')));const ol=NX.el('ol');String(x.prep).split('|').forEach(t=>ol.append(NX.el('li',null,t.trim())));NX.mark(ol,'meal_templates','prep',w);dd.append(s,ol);body.append(dd);}
+    c.append(body);el.append(c);});});
+
+dash.draw('menu_total',(el)=>{const r=NX.sel();const t=dash.data('template_totals');el.replaceChildren();if(!r||t.status!=='ok')return;const tt=t.data.find(z=>z.template===r.template);if(!tt)return;
+  const p=NX.el('div','fx-sum');const gap=r.carbs_g-tt.carbs_g;p.append(NX.svg(gap>40?'zap':'check',18,gap>40?dash.colors[3]:dash.colors[1]),document.createTextNode('This menu gives '),NX.mark(NX.el('b',null,tt.carbs_g+' g'),'template_totals','carbs_g','template='+r.template),document.createTextNode(' carbs and '),NX.mark(NX.el('b',null,tt.protein_g+' g'),'template_totals','protein_g','template='+r.template),document.createTextNode(' protein · your target is '),NX.mark(NX.el('b',null,r.carbs_g+' g'),'day_targets','carbs_g','date='+r.date),document.createTextNode(' carbs.'+(gap>40?' Add about '+gap+' g: an extra cup of white rice ≈ 45 g, a bagel with honey ≈ 60 g, 500 ml sports drink ≈ 30 g.':' You are on target.')));el.append(p);});
+
+dash.draw('build_key',(el)=>{el.replaceChildren();[['Base rebuild',1],['Aerobic strength',0],['Marathon-specific',4],['Taper',5]].forEach(([l,ci])=>{const s=NX.el('span');const i=NX.el('i');i.style.background=dash.colors[ci];s.append(i,document.createTextNode(l));el.append(s);});const s=NX.el('span');s.append(NX.svg('zap',13,dash.colors[3]),document.createTextNode('Bar = weekly km · number = average carbs per day'));el.append(s);});
+
+dash.draw('build',(el)=>{const d=dash.data('weeks');const r=NX.sel();el.replaceChildren();if(d.status!=='ok'){el.textContent=d.status==='error'?'The plan failed to load.':NX.status();return;}
+  const mx=d3.max(d.data,w=>w.km)||1;const td=NX.today();const hd=NX.el('div','fx-wk hd');['Wk','Dates','Weekly km','Carbs / day','Long'].forEach(t=>hd.append(NX.el('span',t==='Dates'?'dt':null,t)));el.append(hd);
+  let ph=null;d.data.forEach(w=>{const ci=NX.PHASE(w.phase);const col=dash.colors[ci];
+    if(w.phase!==ph){ph=w.phase;const pr=NX.el('div','fx-ph-row');const i=NX.el('i');i.style.background=col;pr.style.color=col;pr.append(i,document.createTextNode(w.phase));el.append(pr);}
+    const wh='week='+w.week;const row=NX.el('div','fx-wk'+(r&&r.week===w.week?' sel':''));row.setAttribute('data-key',String(w.week));row.setAttribute('role','button');row.tabIndex=0;
+    if(td>=w.start&&td<=w.end)row.style.background=NX.tint(dash.colors[0],10);
+    const bar=NX.el('div','bar');const i=NX.el('i');i.style.width=Math.max(4,w.km/mx*80)+'%';i.style.background=col;bar.append(i,NX.mark(NX.el('span',null,w.km+' km'),'weeks','km',wh));
+    const cb=NX.el('div','cb');const sq=NX.el('i');sq.style.background=dash.colors[3];sq.style.opacity=Math.min(1,.25+(w.avg_carbs_gkg-4.5)/4).toFixed(2);cb.append(sq,NX.mark(NX.el('span',null,w.avg_carbs_g+' g'),'weeks','avg_carbs_g',wh));cb.title=w.avg_carbs_gkg+' g/kg average';
+    row.append(NX.mark(NX.el('span','w','W'+w.week),'weeks','week',wh),NX.el('span','dt',NX.fd(NX.parse(w.start))+' – '+NX.fd(NX.parse(w.end))),bar,cb,NX.mark(NX.el('span','lr',w.long_km?w.long_km+' km':'—'),'weeks','long_km',wh));
+    const go=()=>{NX.go(w.start);document.getElementById('hero').scrollIntoView({behavior:'smooth'});};row.addEventListener('click',go);row.addEventListener('keydown',e=>{if(e.key==='Enter')go();});el.append(row);});});
+
+dash.draw('juices',(el)=>{const d=dash.data('juices');el.replaceChildren();if(d.status!=='ok'){el.textContent=d.status==='error'?'Juices failed to load.':'—';return;}
+  d.data.forEach(j=>{const w='name='+j.name;const c=NX.el('article','fx-j');c.setAttribute('data-key',j.name);if(j.image){const im=NX.el('img');im.src=j.image;im.alt=j.name;im.loading='lazy';c.append(im);}c.append(NX.el('div','g'),NX.mark(NX.el('span','cg',j.carbs_g+' g carbs'),'juices','carbs_g',w));
+    const b=NX.el('div','b');b.append(NX.mark(NX.el('span','when',j.when),'juices','when',w),NX.mark(NX.el('h3',null,j.name),'juices','name',w),NX.mark(NX.el('p',null,j.ingredients),'juices','ingredients',w),NX.mark(NX.el('p',null,j.why),'juices','why',w));if(j.image_credit)b.append(NX.el('span','cr','Photo: '+j.image_credit));c.append(b);el.append(c);});});
+
+dash.draw('shop',(el)=>{const d=dash.data('shopping');el.replaceChildren();if(d.status!=='ok'){el.textContent=d.status==='error'?'Shopping list failed to load.':'—';return;}
+  const AI={'Produce':['leaf',1],'Meat & seafood':['fish',5],'Dairy & eggs':['milk',0],'Bakery & grains':['grain',3],'Pantry':['jar',4],'Frozen':['snow',0],'Drinks':['cup',5]};
+  d3.groups(d.data,x=>x.aisle).forEach(([a,items])=>{const [ic,ci]=AI[a]||['cart',0];const col=dash.colors[ci];const c=NX.el('div','fx-aisle');const h=NX.el('h3');const b=NX.el('span','fx-ib');b.style.cssText=`width:34px;height:34px;border-radius:10px;background:${NX.tint(col,15)}`;b.append(NX.svg(ic,18,col));h.append(b,document.createTextNode(a),NX.el('small',null,items.length+' items'));c.append(h);
+    const ul=NX.el('ul');items.forEach(x=>{const li=NX.el('li');li.setAttribute('data-key',x.item);const q=+x.qty;const bq=NX.mark(NX.el('b',null,q?'× '+q:'as needed'),'shopping','qty','item='+x.item);bq.style.background=q?NX.tint(col,15):'transparent';if(!q)bq.style.color='var(--color-fg-muted)';li.append(NX.el('span',null,x.item),bq);ul.append(li);});c.append(ul);el.append(c);});});
+
+dash.draw('swaps',(tb)=>{const d=dash.data('swaps');tb.replaceChildren();if(d.status!=='ok'){if(d.status==='error'){const td=tb.insertRow().insertCell();td.colSpan=3;td.textContent='Swaps failed to load.';}return;}
+  d.data.forEach(s=>{const tr=tb.insertRow();tr.setAttribute('data-key',s.instead_of);const a=tr.insertCell();const sp=NX.el('span','ic');sp.append(NX.svg('x',16,dash.colors[5]),document.createTextNode(s.instead_of));a.append(sp);const b=tr.insertCell();const sp2=NX.el('span','ic');sp2.append(NX.svg('check',16,dash.colors[1]),document.createTextNode(s.choose));b.append(sp2);tr.insertCell().textContent=s.why;});});
+</script>

@@ -1,0 +1,15 @@
+{
+ "name": "Labs \u2014 Health & Lab Results",
+ "short_name": "Labs",
+ "start_url": "./",
+ "display": "standalone",
+ "background_color": "#0b1f3a",
+ "theme_color": "#0b1f3a",
+ "icons": [
+  {
+   "src": "../assets/icon-labs.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  }
+ ]
+}

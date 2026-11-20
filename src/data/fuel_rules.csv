@@ -1,0 +1,7 @@
+type,template,label,carbs_gkg,protein_gkg,fat_gkg
+rest,rest,Rest + strength,4.5,1.9,1.0
+recovery,easy,Recovery run,5.0,1.9,1.0
+easy,easy,Easy run,5.5,1.9,1.0
+track,track,Track session,7.0,1.9,0.9
+long,long,Long run,7.0,1.9,0.9
+race,race,Race,9.0,1.5,0.8

@@ -1,0 +1,66 @@
+aisle,item,qty,instacart_query
+Produce,Bananas,12,bananas
+Produce,Blueberries,2,blueberries
+Produce,Raspberries,1,raspberries
+Produce,Apples,3,gala apples
+Produce,Oranges,8,navel oranges
+Produce,Carrots (2 lb bag),1,carrots
+Produce,Ginger root,1,ginger root
+Produce,Kale,1,kale
+Produce,Cucumbers,3,cucumber
+Produce,Celery,1,celery
+Produce,Green apples,2,granny smith apples
+Produce,Lemons,3,lemons
+Produce,Limes,3,limes
+Produce,Mini watermelon,1,mini seedless watermelon
+Produce,Fresh mint,1,fresh mint
+Produce,Papaya,1,papaya
+Produce,Pineapple,1,pineapple
+Produce,Baby spinach,1,baby spinach
+Produce,Broccoli crowns,2,broccoli crowns
+Produce,Sweet potatoes,3,sweet potatoes
+Produce,Russet potatoes,2,russet potatoes
+Produce,Avocados,2,hass avocado
+Produce,Kiwis,8,kiwi
+Produce,Salad mix,2,spring mix salad
+Produce,Tomatoes,4,roma tomatoes
+Produce,Yellow onions,2,yellow onion
+Produce,Garlic,1,garlic
+Meat & seafood,Chicken breast (≈2.5 lb),2,boneless skinless chicken breast
+Meat & seafood,Salmon fillets (≈1 lb),1,atlantic salmon fillet
+Meat & seafood,Sushi-grade salmon (8 oz),1,sushi grade salmon
+Meat & seafood,Tilapia fillets (1 lb),1,tilapia fillets
+Meat & seafood,"Shrimp, peeled (1 lb)",1,peeled shrimp
+Meat & seafood,White fish for tacos (race week only),0,mahi mahi fillet
+Dairy & eggs,"Eggs, dozen",1,large eggs
+Dairy & eggs,Liquid egg whites,1,egg whites
+Dairy & eggs,"Skim milk, 1 gal",1,skim milk
+Dairy & eggs,"0% Greek yogurt, 32 oz",2,nonfat greek yogurt
+Dairy & eggs,Skyr cups,4,icelandic skyr
+Dairy & eggs,"Low-fat chocolate milk, 1 qt",1,low fat chocolate milk
+Bakery & grains,Rolled oats,1,old fashioned rolled oats
+Bakery & grains,Whole-grain bread,1,whole grain bread
+Bakery & grains,Bagels,6,plain bagels
+Bakery & grains,Tapioca flour (goma),1,tapioca flour hydrated
+Bakery & grains,Brown rice (2 lb),1,brown rice
+Bakery & grains,White rice (2 lb),1,jasmine rice
+Bakery & grains,Sushi rice,1,sushi rice
+Bakery & grains,Quinoa,1,quinoa
+Bakery & grains,Whole-wheat spaghetti,1,whole wheat spaghetti
+Bakery & grains,Rice cakes,1,rice cakes
+Bakery & grains,Granola,1,low sugar granola
+Pantry,"Black beans, canned",4,black beans canned
+Pantry,Brown lentils (1 lb),1,brown lentils
+Pantry,Peanut butter,1,natural peanut butter
+Pantry,Honey,1,honey
+Pantry,Walnuts,1,walnuts
+Pantry,Almonds,1,raw almonds
+Pantry,Chia seeds,1,chia seeds
+Pantry,Tomato sauce,2,marinara sauce
+Pantry,Psyllium husk,1,psyllium husk powder
+Pantry,Olive oil,1,extra virgin olive oil
+Pantry,Chicken or vegetable stock,1,low sodium vegetable broth
+Frozen,Unsweetened açaí packs,1,unsweetened acai packs
+Frozen,Edamame,1,shelled edamame
+Drinks,Tart cherry juice (peak weeks),0,tart cherry juice
+Drinks,Beetroot juice (race weeks),0,beet juice

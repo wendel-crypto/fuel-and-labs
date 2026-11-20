@@ -1,0 +1,40 @@
+template,order,time,slot,item,juice,carbs_g,protein_g,fat_g,image,image_credit,prep_min,prep
+rest,1,07:00,Breakfast,"Oats 80 g cooked in skim milk 250 ml, berries, 15 g walnuts; 1 egg + 1 white on the side",no,80,28,15,/_blob/a0751dbb176654fa7777a8137d8586b8,AI-generated,10,"Simmer oats in milk 4–5 min, stirring|Boil the egg 9 min, peel|Top oats with berries and chopped walnuts"
+rest,2,07:00,Juice,"Green juice 300 ml: kale, cucumber, celery, green apple, lemon, ginger",yes,25,2,0,/_blob/7e4eb454b53ac0ee2378bd886c2fcd00,Guillermo Nolasco / Unsplash,5,"Wash and chop everything|Juice or blend with 100 ml water, then strain|Drink right away"
+rest,3,10:30,Snack,0% Greek yogurt 200 g + 1 apple,no,30,20,0,/_blob/fc610539d882e42cb0f6628a950cd41d,AI-generated,2,Spoon yogurt into a bowl|Slice the apple on top
+rest,4,13:00,Lunch,"Grilled chicken 110 g, quinoa 1 cup, black beans ½ cup, big salad, olive oil 1 tbsp",no,70,42,20,/_blob/4b2b1bce4a31e5fafca95c9cc2de54a4,AI-generated,20,"Rinse quinoa, simmer 15 min (batch cook Sunday)|Season chicken with salt, garlic, lemon; grill 5–6 min per side|Warm beans, dress salad with olive oil and lemon"
+rest,5,16:30,Snack,Almonds 30 g + 1 orange,no,20,7,15,/_blob/9fb07e09d06ad2a1efa7395df6e94781,AI-generated,1,Portion almonds into a small bag the night before
+rest,6,19:30,Dinner,"Salmon 120 g, sweet potato 200 g, roasted vegetables + psyllium 5 g in water",no,50,30,18,/_blob/58f6e5f7a24aeac23ac45f270ed6b888,AI-generated,30,Oven to 425 °F; roast sweet potato wedges 25 min|Add broccoli and salmon for the last 12 min|Stir psyllium into a big glass of water and drink with dinner
+rest,7,21:00,Evening,2 kiwis + chamomile tea,no,25,2,0,,,2,Halve kiwis and scoop|Steep tea 5 min
+easy,1,05:30,Wake-up,Water 500 ml + 1 LMNT stick + ½ banana,no,12,0,0,,,1,Mix LMNT into cold water the night before
+easy,2,06:00,Run,Easy run — no fuel needed under 75 min; carry water,no,0,0,0,,,0,
+easy,3,07:15,Breakfast,"2 tapioca crepes with 1 egg + 2 whites, papaya; coffee",no,75,18,6,/_blob/6276e31512d59062680ff27acf599f3b,AI-generated,10,"Spread 3 tbsp hydrated tapioca in a hot nonstick pan, 1 min per side|Scramble egg + whites with salt|Fill crepes; slice papaya"
+easy,4,07:15,Juice,Orange + carrot + ginger juice 300 ml,yes,35,2,0,/_blob/39528639e63ea127772a56abfdfd9be4,Alondra Lucia / Unsplash,5,"Peel 2 oranges, chop 2 carrots and 2 cm ginger|Juice or blend and strain"
+easy,5,10:30,Snack,Skyr 150 g + granola 40 g + berries,no,45,20,6,/_blob/fc610539d882e42cb0f6628a950cd41d,AI-generated,2,"Layer skyr, granola and berries"
+easy,6,13:00,Lunch,"Chicken 120 g, brown rice 1 cup, black beans 1 cup, salad, olive oil",no,95,48,18,/_blob/5a5f24555949662c1a702b38062d10d0,AI-generated,20,"Use batch-cooked rice and beans|Grill seasoned chicken 5–6 min per side|Salad with tomato, onion, olive oil, vinegar"
+easy,7,16:30,Snack,2 rice cakes + 1 tbsp peanut butter + banana,no,45,6,9,/_blob/9fb07e09d06ad2a1efa7395df6e94781,AI-generated,2,"Spread peanut butter, top with banana slices"
+easy,8,19:30,Dinner,"Salmon poke bowl: sushi rice 1 cup, salmon 120 g, edamame, cucumber + psyllium 5 g",no,60,32,16,/_blob/7b6fb1a6889110bcc986203f510dca2c,AI-generated,20,"Cook sushi rice, season with rice vinegar|Cube sushi-grade salmon (or sear it 2 min per side)|Add edamame, cucumber, sesame, low-sodium soy"
+easy,9,21:00,Evening,2 kiwis,no,20,2,0,,,1,
+track,1,04:45,Wake-up,Water 500 ml + 1 LMNT stick,no,0,0,0,,,1,Leave bottle ready the night before
+track,2,04:50,Pre-track,Banana + 1 slice toast with honey (or 1 Maurten Gel 100),no,50,4,1,/_blob/3f07b96ea1386948ae31e749b0cb5288,AI-generated,3,"Toast bread, drizzle honey|Eat 40 min before warm-up"
+track,3,05:30,Track,Coach session at Tropical Park — sip water; Gel 100 if the session runs past 75 min,no,0,0,0,,,0,
+track,4,07:00,Recovery shake,"Skim milk 300 ml, banana, 30 g oats, 20 g whey — within 30 min",no,75,35,4,/_blob/1303836c02f2c7b107d1a716cf829433,AI-generated,3,Blend everything 30 seconds|Drink within 30 min of finishing
+track,5,07:00,Juice,Watermelon + mint + pinch of salt 300 ml (rehydration),yes,30,1,0,/_blob/0596cb15a14397ffa010e57447189874,Rajasekhar R / Unsplash,5,"Blend 2 cups watermelon, mint, lime and a pinch of salt|Strain and chill"
+track,6,09:30,Breakfast,"2 slices whole-grain toast, 1 egg, ¼ avocado, papaya",no,60,14,12,/_blob/f501ad9c395faaa34a957a0723e7f8b5,AI-generated,8,"Toast bread, smash avocado with lime and salt|Fry egg in a non-stick pan with a spray of oil"
+track,7,13:00,Lunch,"Whole-wheat pasta 120 g dry, shrimp 100 g, tomato sauce, side salad",no,100,34,12,/_blob/ab7d1770b11eaee17e095519621285f0,AI-generated,20,"Boil pasta 9–10 min|Sauté shrimp with garlic 3 min, add tomato sauce|Toss with pasta and basil"
+track,8,16:00,Snack,Unsweetened açaí bowl with banana and granola,no,75,6,10,/_blob/3f42ef4f86001ce8d793a4749d33479c,AI-generated,5,Blend frozen açaí pack with ½ banana and a splash of milk|Top with banana and granola
+track,9,19:30,Dinner,"Tilapia 120 g, white rice 1.5 cups, lentils ½ cup, vegetables + psyllium 5 g",no,90,32,10,/_blob/f1ac5e22f10ed6a90d424c5fd9aad1cd,AI-generated,20,"Season tilapia with lemon, garlic, paprika; pan-sear 3 min per side|Reheat batch-cooked rice and lentils|Steam vegetables 5 min"
+long,1,04:30,Pre-run breakfast,Bagel with honey + banana; water 500 ml + 1 LMNT stick,no,100,10,2,/_blob/3f07b96ea1386948ae31e749b0cb5288,AI-generated,3,"Toast bagel, add honey|Eat 90 min before the start"
+long,2,05:45,Pre-start,1 Maurten Gel 100 CAF 100,no,25,0,0,,,0,
+long,3,06:00,Long run,Gel 160 every 25–30 min from minute 30 (60–90 g carbs/hour) + water,no,120,0,0,,,0,
+long,4,08:45,Recovery,Chocolate skim milk 400 ml + banana,no,75,14,2,/_blob/3c4419bb5a2fa6313c45877cc3a15f24,AI-generated,1,Keep chocolate milk cold in the fridge for when you get home
+long,5,08:45,Juice,Orange + pineapple + ginger juice 300 ml,yes,40,2,0,/_blob/39528639e63ea127772a56abfdfd9be4,Alondra Lucia / Unsplash,5,"Blend 2 oranges, 1 cup pineapple, ginger|Strain and drink cold"
+long,6,10:30,Brunch,"Omelette (2 eggs + 2 whites) with spinach, 2 slices whole-grain toast, fruit",no,45,30,14,/_blob/466a532a5c01d1bfe3ce51b6358f9b24,AI-generated,10,"Whisk eggs and whites, pour into a hot pan|Add spinach, fold after 2 min|Serve with toast and fruit"
+long,7,13:30,Lunch,"Grilled chicken 120 g, rice 1.5 cups, black beans, vinagrete salad",no,95,45,14,/_blob/5a5f24555949662c1a702b38062d10d0,AI-generated,20,"Grill chicken 5–6 min per side|Reheat rice and beans|Vinagrete: tomato, onion, parsley, vinegar, olive oil"
+long,8,19:00,Dinner,"Lentil soup, whole-grain bread, 0% yogurt + psyllium 5 g",no,60,26,10,/_blob/41371e00a12583bd30732d766e6009fc,AI-generated,35,"Sauté onion, carrot, garlic 5 min|Add 1 cup lentils, 4 cups stock, cumin; simmer 25 min|Season, serve with bread and yogurt"
+race,1,04:00,Race breakfast,2 white bagels with honey + banana; water 500 ml + 1 LMNT stick,no,140,12,3,/_blob/3f07b96ea1386948ae31e749b0cb5288,AI-generated,3,Same breakfast you rehearsed on long runs — nothing new
+race,2,06:45,Pre-start,1 Maurten Gel 100 CAF 100,no,25,0,0,,,0,
+race,3,07:00,Race,"Gel 160 at 0:25, 0:50, 1:40, 2:05; Gel 100 CAF at 1:15 and 2:30; Gel 100 at 2:50 if the stomach is fine",no,235,0,0,,,0,
+race,4,10:30,Recovery,Chocolate skim milk 500 ml + banana,no,85,17,5,/_blob/3c4419bb5a2fa6313c45877cc3a15f24,AI-generated,1,
+race,5,13:00,Lunch,Grilled fish tacos with rice and beans,no,100,40,20,/_blob/e24f731d0bea6da41ce65c7f3cefe6bd,AI-generated,25,"Season fish with lime and chili, grill 3 min per side|Warm corn tortillas; add slaw and salsa|Serve with rice and beans"
+race,6,19:00,Dinner,Pasta with chicken and tomato sauce,no,90,35,15,/_blob/4c464571d8e368543ae4883f719c0d85,AI-generated,25,"Boil pasta|Sear sliced chicken 6 min, add tomato sauce|Toss together with basil"
